@@ -1,0 +1,210 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #222;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  height: 40px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: #ffa726;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.2s, border-bottom 0.2s;
+  border-bottom: 2px solid transparent;
+}
+.nav-links a:hover {
+  color: #fff;
+  border-bottom: 2px solid #ffa726;
+}
+
+.hero {
+  background: linear-gradient(120deg, #222 60%, #ffa726 100%);
+  color: #fff;
+  text-align: center;
+  padding: 5rem 2rem 3rem 2rem;
+}
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+.cta-btn {
+  background: #ffa726;
+  color: #222;
+  border: none;
+  padding: 0.9rem 2.2rem;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.cta-btn:hover {
+  background: #fff;
+  color: #ffa726;
+  transform: translateY(-2px) scale(1.04);
+}
+
+.about {
+  max-width: 800px;
+  margin: 3rem auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+.about-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.about-buttons button {
+  background: #ffa726;
+  color: #222;
+  border: none;
+  padding: 0.7rem 1.7rem;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.about-buttons button:hover {
+  background: #222;
+  color: #ffa726;
+  transform: scale(1.05);
+}
+
+.services {
+  background: #f7f7f7;
+  padding: 3rem 1rem 2rem 1rem;
+  text-align: center;
+}
+.service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.service-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(34,34,34,0.07);
+  padding: 2rem 1.5rem;
+  max-width: 340px;
+  min-width: 260px;
+  flex: 1 1 260px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: left;
+}
+.service-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(255,167,38,0.13);
+}
+.service-card h3 {
+  color: #ffa726;
+  margin-top: 0;
+}
+.and-more {
+  margin-top: 2rem;
+  font-style: italic;
+  color: #888;
+}
+
+.footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+  margin-top: 3rem;
+}
+.footer-logo {
+  height: 36px;
+  margin-bottom: 1rem;
+}
