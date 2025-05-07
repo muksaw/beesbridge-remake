@@ -1,50 +1,50 @@
 import React from "react";
 import logo from "./assets/logo.png";
+import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 
 const navLinks = [
-  { name: "Home", href: "#" },
-  { name: "About", href: "#" },
-  { name: "Company Testimonials", href: "#" },
-  { name: "Services", href: "#" },
-  { name: "Contact", href: "#" },
-  { name: "Partners", href: "#" },
-  { name: "Blogs", href: "#" },
+  { name: "Home", to: "/" },
+  {
+    name: "About",
+    submenu: [
+      { name: "About Us", to: "/about" },
+      { name: "Certifications", to: "/certifications" },
+      { name: "Company Testimonials", to: "/testimonials" }
+    ]
+  },
+  { name: "Services", to: "/services" },
+  { name: "Contact", to: "/contact" },
+  { name: "Partners", to: "/partners" },
+  { name: "Blogs", to: "/blogs" },
 ];
 
 export default function HomePage() {
   return (
     <div>
-      {/* Navbar */}
-      <nav className="navbar">
-        <img src={logo} alt="Beesbridge Logo" className="logo" />
-        <ul className="nav-links">
-          {navLinks.map(link => (
-            <li key={link.name}><a href={link.href}>{link.name}</a></li>
-          ))}
-        </ul>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <header className="hero">
         <h1>IT Services and IT Consulting</h1>
         <p>We build bridges for business</p>
-        <button className="cta-btn">Contact Us</button>
+        <Link to="/contact" className="cta-btn">Contact Us</Link>
       </header>
 
       {/* About Section */}
-      <section className="about">
+      <section className="about fade-in stagger-1">
         <h2>What is Beesbridge?</h2>
         <p>
           Beesbridge LLC is a boutique firm formed by passionate engineers who specialize in cloud computing, big data engineering, and analytics. We build bridges for the businesses by connecting the data silos formed due to massive growth in data volumes.
         </p>
         <div className="about-buttons">
-          <button>Learn more about us!</button>
-          <button>Customer testimonials</button>
+          <Link to="/about" className="about-btn">Learn more about us!</Link>
+          <Link to="/testimonials" className="about-btn">Customer testimonials</Link>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="services">
+      <section className="services fade-in stagger-2">
         <h2>Our Services</h2>
         <div className="service-cards">
           <div className="service-card">
@@ -71,8 +71,10 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="footer">
-        <img src={logo} alt="Beesbridge Logo" className="footer-logo" />
-        <p>&copy; {new Date().getFullYear()} Beesbridge LLC. All rights reserved.</p>
+        <Link to="/">
+          <img src={logo} alt="Beesbridge Logo" className="footer-logo" />
+        </Link>
+        <p>Beesbridge LLC. All rights reserved.</p>
       </footer>
     </div>
   );
