@@ -18,29 +18,37 @@ const navLinks = [
   { name: "Blogs", to: "/blogs" },
 ];
 
+// Store scroll positions for visited pages
+const scrollPositions = new Map();
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
   
   useEffect(() => {
-    // Only add scroll listener if we're on the homepage
-    if (!isHomePage) {
-      setScrolled(true); // Always show solid navbar on other pages
-      return;
-    }
-    
     const handleScroll = () => {
       // Check if we've scrolled past the hero section (approx height)
-      const heroHeight = 400; // Adjust based on your hero section height
+      const heroHeight = 200;
       const isScrolled = window.scrollY > heroHeight;
       
       if (isScrolled !== scrolled) {
         setScrolled(isScrolled);
       }
+
+      // Save scroll position for current page
+      scrollPositions.set(location.pathname, window.scrollY);
     };
     
     window.addEventListener('scroll', handleScroll);
+    
+    // Handle page navigation
+    if (scrollPositions.has(location.pathname)) {
+      // If we've visited this page before, restore its scroll position
+      window.scrollTo(0, scrollPositions.get(location.pathname));
+    } else {
+      // If this is a new page, start at the top
+      window.scrollTo(0, 0);
+    }
     
     // Run once on mount to set initial state
     handleScroll();
@@ -49,10 +57,10 @@ export default function Navbar() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [scrolled, isHomePage]);
+  }, [scrolled, location.pathname]);
   
   return (
-    <nav className={`navbar ${scrolled || !isHomePage ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <Link to="/">
         <img src={logo} alt="Beesbridge Logo" className="logo" />
       </Link>

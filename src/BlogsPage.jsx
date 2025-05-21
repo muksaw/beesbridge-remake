@@ -3,17 +3,18 @@ import Navbar from "./Navbar";
 import logo from "./assets/logo.png";
 import usingAirbyteThumb from "./assets/using_airbytes_blog_thumbnail.png";
 import drivingDataThumb from "./assets/driving_data_usbability_thumbnail.png";
+import tmsisThumb from "./assets/tmsis_thumbnail.png";
 import { Link } from "react-router-dom";
 
 const articles = [
   {
-    id: 1,
-    author: "Venkat Dasari",
-    date: "Nov 20 2022",
-    title: "Using Airbyte with Rest API",
-    excerpt: "FYI. Not about building a Rest API Custom Connector!!! If you are here you must have already know how to setup Airbyte on your local or on AWS or on Azure etc. I want to talk a little bit about kicking off Airbyte via Rest API. If there is a UI why do i need to use REST? Well, for a reason, we do not h…",
-    link: "https://blog.devgenius.io/using-airbyte-with-rest-api-2e65c180ee80",
-    thumbnail: usingAirbyteThumb
+    id: 3,
+    author: "Mohit Sauhta",
+    date: "Mar 19, 2024",
+    title: "Automating Medicaid's T-MSIS Source-to-Target Mapping with OpenAI's Response API and File Search Tool",
+    excerpt: "This article guides you through automating source-to-target data mappings for Medicaid's Transformed Medicaid Statistical Information System (T-MSIS) by leveraging OpenAI's new Response API and File Search tool within a Retrieval-Augmented Generation (RAG) framework. It includes detailed steps for data preparation, vector store creation and management, and effective query construction...",
+    link: "https://medium.com/@mohit.sauhta/automating-medicaids-t-msis-source-to-target-mapping-with-openai-s-response-api-and-file-search-8a3d37d15444",
+    thumbnail: tmsisThumb
   },
   {
     id: 2,
@@ -23,6 +24,15 @@ const articles = [
     excerpt: "Faced with clinician shortages, an aging population, and stagnant health outcomes, the healthcare industry has the potential to greatly benefit from disruptive technologies such as artificial …",
     link: "https://www.databricks.com/blog/driving-data-usability-health-plans-through-simplified-data-quality-enforcement-databricks",
     thumbnail: drivingDataThumb
+  },
+  {
+    id: 1,
+    author: "Venkat Dasari",
+    date: "Nov 20, 2022",
+    title: "Using Airbyte with Rest API",
+    excerpt: "FYI. Not about building a Rest API Custom Connector!!! If you are here you must have already know how to setup Airbyte on your local or on AWS or on Azure etc. I want to talk a little bit about kicking off Airbyte via Rest API. If there is a UI why do i need to use REST? Well, for a reason, we do not h…",
+    link: "https://blog.devgenius.io/using-airbyte-with-rest-api-2e65c180ee80",
+    thumbnail: usingAirbyteThumb
   }
 ];
 
