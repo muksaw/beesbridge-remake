@@ -6,13 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:custom": "cross-env VITE_CUSTOM_DOMAIN=true vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "predeploy:custom": "npm run build:custom",
-    "deploy": "gh-pages -d dist",
-    "deploy:custom": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "gh-pages": "^6.3.0",

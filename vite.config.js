@@ -7,5 +7,5 @@ const useCustomDomain = process.env.CUSTOM_DOMAIN === 'true';
 
 export default defineConfig({
   plugins: [react()],
-  base: useCustomDomain ? '/' : (process.env.NODE_ENV === 'production' ? '/beesbridge-remake/' : '/'),
+  base: '/',
 })
