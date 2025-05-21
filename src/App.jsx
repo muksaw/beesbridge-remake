@@ -10,8 +10,12 @@ import PartnersPage from "./PartnersPage";
 import BlogsPage from "./BlogsPage";
 
 function App() {
+  // Check if using custom domain (will be '/' in both dev and production with custom domain)
+  const isCustomDomain = import.meta.env.VITE_CUSTOM_DOMAIN === 'true';
+  const basename = isCustomDomain ? '/' : (import.meta.env.DEV ? '/' : '/beesbridge-remake');
+  
   return (
-    <Router basename="/beesbridge-remake">
+    <Router basename={basename}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />

@@ -6,10 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:custom": "cross-env VITE_CUSTOM_DOMAIN=true vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy:custom": "npm run build:custom",
+    "deploy": "gh-pages -d dist",
+    "deploy:custom": "gh-pages -d dist"
   },
   "dependencies": {
     "gh-pages": "^6.3.0",
@@ -22,11 +25,12 @@
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",
+    "cross-env": "^7.0.3",
     "eslint": "^9.25.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
     "vite": "^6.3.5"
   },
-  "homepage": "https://muksaw.github.io/beesbridge-remake/"
+  "homepage": "https://beesbridge.us/"
 }
