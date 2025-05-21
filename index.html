@@ -2,11 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/beesbridge-remake/assets/beesbridgefavicon32x32-DQC2IDom.png" />
+    <link rel="icon" type="image/png" href="/assets/beesbridgefavicon32x32-DQC2IDom.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beesbridge LLC</title>
-    <script type="module" crossorigin src="/beesbridge-remake/assets/index-ow3CG72h.js"></script>
-    <link rel="stylesheet" crossorigin href="/beesbridge-remake/assets/index-DfMTBMHN.css">
+    <script>
+      // Redirect to HTTPS if currently on HTTP
+      if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost') {
+        window.location.href = window.location.href.replace('http:', 'https:');
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-BExKq-go.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DfMTBMHN.css">
   </head>
   <body>
     <div id="root"></div>
