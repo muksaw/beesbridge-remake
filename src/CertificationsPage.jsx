@@ -7,6 +7,8 @@ import aws from "./assets/AWS-Certified-Solutions-Architect-Professional_badge.6
 import mlProfessional from "./assets/databricksmachinelearningprofessionals.png";
 import azure from "./assets/azure-1-qlydstlm0utl644qih4hgmrvytb3zqcdqixjijnddo.png";
 import nmsdc from "./assets/NMSDC_CERIFIED_2024-300x280.png";
+import logo from "./assets/logo.png";
+import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 
 export default function CertificationsPage() {
@@ -59,6 +61,12 @@ export default function CertificationsPage() {
         </div>
       </section>
       <hr />
+      <footer className="footer">
+        <Link to="/">
+          <img src={logo} alt="Beesbridge Logo" className="footer-logo" />
+        </Link>
+        <p>Beesbridge LLC. All rights reserved.</p>
+      </footer>
     </div>
   );
 } 
