@@ -10,6 +10,7 @@ import fivetran from "./assets/fivetran_logo.png";
 import healthverity from "./assets/healthverity_logo.jpg";
 import abacusinsights from "./assets/abacus_insights_logo.jpg";
 import synthesized from "./assets/synthesized_logo.png";
+import confluent from "./assets/Confluent_Logo.png";
 import { Link } from "react-router-dom";
 
 const partners = [
@@ -22,6 +23,7 @@ const partners = [
   { name: "HealthVerity", image: healthverity },
   { name: "Abacus Insights", image: abacusinsights },
   { name: "Synthesized", image: synthesized },
+  { name: "Confluent", image: confluent },
 ];
 
 export default function PartnersPage() {
