@@ -1,6 +1,4 @@
-# BeesBridge website — deploy bundle
-
-Drop these files into the root of the `muksaw.github.io` repo (or whichever repo serves `www.beesbridge.us` from GitHub Pages).
+# BeesBridge website
 
 ## What's in this bundle
 
@@ -13,22 +11,6 @@ CNAME                   ← tells GitHub Pages to serve www.beesbridge.us
 .nojekyll               ← disables Jekyll so assets/ paths work as-is
 ```
 
-## How to deploy
-
-1. **Back up** the current repo first — `git checkout -b backup-before-redesign` and push it.
-2. From the repo root, delete the current site files and copy these in:
-   ```
-   cp -R /path/to/this/bundle/. .
-   ```
-   (The trailing `/.` copies hidden files like `.nojekyll` too.)
-3. Verify the `CNAME` file still contains `www.beesbridge.us`. If you want the apex (`beesbridge.us`) too, set it to just `beesbridge.us` and configure both A and CNAME records.
-4. Commit and push:
-   ```
-   git add .
-   git commit -m "feat: redesigned site with HelixCore, PSA, internal toolkit, case studies"
-   git push origin main
-   ```
-5. GitHub Pages will rebuild in 30–60 seconds. Verify at `https://www.beesbridge.us`.
 
 ## Notes
 
