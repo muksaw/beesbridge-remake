@@ -1,19 +1,1841 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/src/assets/beesbridgefavicon32x32.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beesbridge LLC</title>
-    <script>
-      // Redirect to HTTPS if currently on HTTP
-      if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost') {
-        window.location.href = window.location.href.replace('http:', 'https:');
-      }
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BeesBridge — Databricks Delivery Partner · HelixCore · PSA Platform</title>
+<meta name="description" content="BeesBridge is a Databricks delivery partner. 150+ production engagements, 30+ engineers across Charlotte, Bengaluru and Brazil. Builders of HelixCore — a semantic compute control plane for the lakehouse." />
+<meta property="og:title" content="BeesBridge — Databricks Delivery Partner" />
+<meta property="og:description" content="Databricks delivery partner. 150+ engagements. Resident Solution Architects. Charlotte · Bengaluru · Brazil." />
+<meta property="og:type" content="website" />
+<link rel="icon" type="image/png" href="assets/beesbridge-logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Scroll progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Background -->
+<div class="bg-canvas" aria-hidden="true">
+  <div class="bg-gradient"></div>
+  <div class="bg-grid"></div>
+  <canvas id="particles"></canvas>
+</div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <a href="#home" class="brand">
+    <img src="assets/beesbridge-logo.png" alt="BeesBridge" class="brand-logo" />
+  </a>
+
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#services">Services</a>
+    <a href="#partners">Partners</a>
+    <a href="#helixcore">HelixCore</a>
+    <a href="#tooling">Toolkit</a>
+    <a href="#psa">PSA Platform</a>
+    <a href="#cases">Case Studies</a>
+    <a href="#insights">Insights</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="nav-cta">
+    <a href="#contact" class="btn btn-primary">Book a scoping call →</a>
+  </div>
+
+  <button class="nav-burger" id="navBurger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services">Services</a>
+  <a href="#partners">Partners</a>
+  <a href="#helixcore">HelixCore</a>
+  <a href="#tooling">Toolkit</a>
+  <a href="#psa">PSA Platform</a>
+  <a href="#cases">Case Studies</a>
+  <a href="#insights">Insights</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="btn btn-primary">Book a scoping call →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div class="reveal">
+      <span class="kicker">
+        <span class="dot"></span>
+        Databricks delivery partner · Charlotte · Bengaluru · Brazil
+      </span>
+
+      <h1 class="hero-title">
+        The Databricks partner your team <em>actually wants</em> in the room.
+      </h1>
+
+      <p class="hero-sub">
+        150+ production engagements across data engineering, migrations, AI/ML, Generative AI and Databricks Apps.
+        Every engagement led by <strong>Resident Solution Architects</strong> — not a bench, not a rotation,
+        not a junior learning on your data.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary shine">
+          Book a 30-min scoping call
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#services" class="btn btn-ghost">See how we work</a>
+      </div>
+
+      <div class="hero-trust">
+        <span><strong>150+</strong> engagements</span>
+        <span class="sep">·</span>
+        <span><strong>Accredited</strong> Databricks partner</span>
+        <span class="sep">·</span>
+        <span><strong>Follow-the-sun</strong> delivery</span>
+      </div>
+    </div>
+
+    <div class="hero-card reveal">
+      <div class="hero-card-head">By the numbers</div>
+      <p class="hero-figure"><span data-count="150" data-suffix="+">0</span></p>
+      <p class="case-line">
+        Production Databricks engagements delivered across healthcare, financial services,
+        retail and SaaS — engineering, migrations, AI/ML and Generative AI.
+      </p>
+      <div class="hero-stats">
+        <div class="hs-card"><div class="num" data-count="30" data-suffix="+">0</div><div class="lbl">Engineers across three geos</div></div>
+        <div class="hs-card"><div class="num">24/5</div><div class="lbl">Follow-the-sun delivery</div></div>
+        <div class="hs-card"><div class="num" data-count="100" data-suffix="%">0</div><div class="lbl">Resident Solution Architects</div></div>
+        <div class="hs-card"><div class="num">3</div><div class="lbl">Charlotte · Bengaluru · Brazil</div></div>
+      </div>
+    </div>
+
+    <!-- Floating tech pills orbiting the hero card -->
+    <div class="hero-orbit" aria-hidden="true">
+      <div class="tech-pill p1"><span class="tp-dot"></span>Delta Lake</div>
+      <div class="tech-pill p2"><span class="tp-dot"></span>Unity Catalog</div>
+      <div class="tech-pill p3"><span class="tp-dot"></span>Lakeflow</div>
+      <div class="tech-pill p4"><span class="tp-dot"></span>MLflow</div>
+      <div class="tech-pill p5"><span class="tp-dot"></span>Spark</div>
+      <div class="tech-pill p6"><span class="tp-dot"></span>Medallion</div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOMERS & PARTNERS — logo marquee -->
+<div class="customers">
+  <div class="container cust-inner">
+    <div class="cust-label">Trusted by</div>
+    <div class="cust-track">
+      <div class="cust-row" id="custRow">
+        <div class="logo-tile" title="Abacus Insights"><img src="assets/logos/abacus.jpg" alt="Abacus Insights" /></div>
+        <div class="logo-tile" title="HealthVerity"><img src="assets/logos/healthverity.jpeg" alt="HealthVerity" /></div>
+        <div class="logo-tile" title="ThoughtSpot"><img src="assets/logos/thoughtspot.jpeg" alt="ThoughtSpot" /></div>
+        <div class="logo-tile" title="Synthesized"><img src="assets/logos/synthesized.png" alt="Synthesized" /></div>
+        <div class="logo-tile logo-tile-partner" title="Databricks"><img src="assets/logos/databricks.png" alt="Databricks" /></div>
+        <div class="logo-tile logo-tile-partner" title="AWS"><img src="assets/logos/aws.png" alt="AWS" /></div>
+        <div class="logo-tile logo-tile-partner" title="Microsoft Azure"><img src="assets/logos/microsoft.png" alt="Microsoft" /></div>
+        <div class="logo-tile logo-tile-partner" title="dbt Labs"><img src="assets/logos/dbt.png" alt="dbt Labs" /></div>
+        <div class="logo-tile logo-tile-partner" title="Confluent"><img src="assets/logos/confluent.png" alt="Confluent" /></div>
+        <div class="logo-tile logo-tile-partner" title="Fivetran"><img src="assets/logos/fivetran.png" alt="Fivetran" /></div>
+        <!-- duplicate set for seamless marquee loop -->
+        <div class="logo-tile" title="Abacus Insights"><img src="assets/logos/abacus.jpg" alt="" /></div>
+        <div class="logo-tile" title="HealthVerity"><img src="assets/logos/healthverity.jpeg" alt="" /></div>
+        <div class="logo-tile" title="ThoughtSpot"><img src="assets/logos/thoughtspot.jpeg" alt="" /></div>
+        <div class="logo-tile" title="Synthesized"><img src="assets/logos/synthesized.png" alt="" /></div>
+        <div class="logo-tile logo-tile-partner" title="Databricks"><img src="assets/logos/databricks.png" alt="" /></div>
+        <div class="logo-tile logo-tile-partner" title="AWS"><img src="assets/logos/aws.png" alt="" /></div>
+        <div class="logo-tile logo-tile-partner" title="Microsoft Azure"><img src="assets/logos/microsoft.png" alt="" /></div>
+        <div class="logo-tile logo-tile-partner" title="dbt Labs"><img src="assets/logos/dbt.png" alt="" /></div>
+        <div class="logo-tile logo-tile-partner" title="Confluent"><img src="assets/logos/confluent.png" alt="" /></div>
+        <div class="logo-tile logo-tile-partner" title="Fivetran"><img src="assets/logos/fivetran.png" alt="" /></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="mono">— What we do</span>
+      <h2>Nine ways data teams hire us on Databricks.</h2>
+      <p>We've deliberately focused on Databricks and gone deep. Every engagement starts with a two-week scoping sprint — you see the plan, the team, and the price before you commit.</p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc reveal" style="--i:0">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg></div>
+        <h3>Databricks delivery</h3>
+        <p>Lakehouse architecture, Unity Catalog, Delta Live Tables and Workflows — shipping production-grade CI/CD from day one.</p>
+        <ul>
+          <li>Lakehouse design &amp; build</li>
+          <li>Unity Catalog &amp; governance</li>
+          <li>DLT, Workflows, observability</li>
+        </ul>
+      </article>
+
+      <article class="svc reveal" style="--i:1">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M4 18V6m6 12V10m6 8V8m6 10V4"/></svg></div>
+        <h3>Data engineering pipelines</h3>
+        <p>Scalable ETL/ELT on Spark, Delta Lake and Lakeflow. Medallion architecture for batch and streaming workloads.</p>
+        <ul>
+          <li>Dimensional &amp; medallion modeling</li>
+          <li>dbt &amp; pipeline development</li>
+          <li>Testing, lineage, observability</li>
+        </ul>
+      </article>
+
+      <article class="svc reveal" style="--i:2">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg></div>
+        <h3>Platform migrations</h3>
+        <p>Off Teradata, Oracle, SQL Server, Hadoop or legacy Spark onto Databricks — migrations that ship in slices, never a big-bang flip.</p>
+        <ul>
+          <li>Teradata &amp; Oracle offload</li>
+          <li>Hadoop to lakehouse</li>
+          <li>Zero data loss, minimal downtime</li>
+        </ul>
+      </article>
+
+      <article class="svc reveal" style="--i:3">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg></div>
+        <h3>AI &amp; ML in production</h3>
+        <p>First model to monitored, governed production — MLflow, feature stores, drift detection, with a bias toward simple models that actually ship.</p>
+        <ul>
+          <li>Feature engineering &amp; training</li>
+          <li>MLflow &amp; model registry</li>
+          <li>Monitoring, drift &amp; retraining</li>
+        </ul>
+      </article>
+
+      <article class="svc reveal" style="--i:4">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M4 20L20 4"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Generative AI</h3>
+        <p>Governed RAG, agentic workflows, and LLM applications on Databricks. Every answer grounded in your lakehouse, with auditability and cost controls.</p>
+        <ul>
+          <li>Retrieval-augmented generation</li>
+          <li>Agentic workflows</li>
+          <li>Evals, governance, cost controls</li>
+        </ul>
+      </article>
+
+      <article class="svc reveal" style="--i:5">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6z"/></svg></div>
+        <h3>Data quality &amp; governance</h3>
+        <p>Custom ANTLR-based rule engines, data grading, Unity Catalog governance, HIPAA &amp; GDPR compliance — the work that won us our healthcare reputation.</p>
+        <ul>
+          <li>ANTLR grammar engines</li>
+          <li>Data grading frameworks</li>
+          <li>HIPAA / GDPR compliance</li>
+        </ul>
+      </article>
+
+      <article class="svc reveal" style="--i:6">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 12c0-5 4-9 9-9M21 12c0 5-4 9-9 9M3 12h4M17 12h4"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <h3>Streaming &amp; real-time</h3>
+        <p>When overnight batch isn't enough: Kafka, Structured Streaming and Delta Live Tables with exactly-once guarantees and runbooks your team can actually run.</p>
+        <ul>
+          <li>Event architecture &amp; schemas</li>
+          <li>Exactly-once pipelines</li>
+          <li>Real-time feature stores</li>
+        </ul>
+      </article>
+
+      <article class="svc reveal" style="--i:7">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H4z"/><path d="M8 20h8M12 16v4"/></svg></div>
+        <h3>Databricks Apps &amp; UI</h3>
+        <p>A dedicated product-UI team in Brazil builds Databricks-native applications on top of your lakehouse — internal tools, operator consoles, governed self-service.</p>
+        <ul>
+          <li>Databricks Apps framework</li>
+          <li>Lakehouse-native internal tools</li>
+          <li>Operator &amp; analyst consoles</li>
+        </ul>
+      </article>
+
+      <article class="svc reveal" style="--i:8">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.2 1.8-4 4-4s4 1.8 4 4"/></svg></div>
+        <h3>Staff augmentation &amp; training</h3>
+        <p>Certified Databricks engineers for short or long-term engagements. Plus certification prep, custom workshops and structured knowledge transfer programs.</p>
+        <ul>
+          <li>Short &amp; long-term engagements</li>
+          <li>Databricks certification prep</li>
+          <li>Custom workshops</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- Case study callout -->
+    <div class="case-callout reveal">
+      <div class="case-tag">Case · Healthcare</div>
+      <div class="case-body">
+        <h3>Automated healthcare data quality on Databricks — <span class="grad-text">featured by Databricks.</span></h3>
+        <p>We built an ANTLR grammar engine on Spark and Delta Lake for Abacus Insights to drive data usability for health plans through simplified data quality enforcement.</p>
+      </div>
+      <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://www.databricks.com/blog/driving-data-usability-health-plans-through-simplified-data-quality-enforcement-databricks">
+        Read on databricks.com →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners-section" id="partners">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="mono">— Partners &amp; Ecosystem</span>
+      <h2>A <span class="grad-text">Databricks delivery partner</span>, first and foremost.</h2>
+      <p>We've spent the last several years going deep on one platform instead of spreading thin across five. The lakehouse doesn't live in a vacuum — we're fluent in the clouds, tools and patterns that surround it.</p>
+    </div>
+
+    <!-- Databricks featured -->
+    <div class="db-hero reveal">
+      <div class="db-hero-bg" aria-hidden="true"></div>
+      <div class="db-hero-content">
+        <div class="db-badge">
+          <span class="db-flame"></span>
+          DATABRICKS · ACCREDITED DELIVERY PARTNER
+        </div>
+        <h3>Our primary platform, by design.</h3>
+        <p>We ship lakehouses the way Databricks intended — Unity Catalog, Delta Live Tables, Workflows, structured streaming, MLflow — with production-grade CI/CD from day one. Every engineer on your project has shipped production Databricks workloads before.</p>
+        <div class="db-cta">
+          <a class="btn btn-primary shine" href="#contact">Start a Databricks project →</a>
+          <a class="btn btn-ghost" href="#services">See our services</a>
+        </div>
+      </div>
+      <div class="db-hero-figs">
+        <div class="db-fg"><div class="db-fg-n" data-count="150" data-suffix="+">0</div><div class="db-fg-l">Production Databricks engagements</div></div>
+        <div class="db-fg"><div class="db-fg-n" data-count="30" data-suffix="+">0</div><div class="db-fg-l">Engineers across three geos</div></div>
+        <div class="db-fg"><div class="db-fg-n" data-count="100" data-suffix="%">0</div><div class="db-fg-l">Resident Solution Architects</div></div>
+        <div class="db-fg"><div class="db-fg-n">24/5</div><div class="db-fg-l">Follow-the-sun delivery</div></div>
+      </div>
+    </div>
+
+    <!-- Ecosystem -->
+    <div class="ecosystem-head reveal">
+      <h3>Where Databricks runs — the ecosystem we plug into.</h3>
+    </div>
+
+    <div class="ecosystem">
+      <article class="eco-card reveal" style="--i:0">
+        <div class="eco-mark" data-vendor="aws">
+          <svg viewBox="0 0 80 32" width="68" height="28" fill="currentColor">
+            <text x="0" y="22" font-family="Inter, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.02em">aws</text>
+            <path d="M2 28 Q40 36 78 28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h4>Amazon Web Services</h4>
+        <p>Databricks on AWS inside your VPC with least-privilege IAM and full CloudTrail audit. S3, Glue, Lake Formation, MSK for Kafka, SageMaker where it's the right tool for the job.</p>
+        <ul class="eco-tick">
+          <li>Databricks on AWS with private networking</li>
+          <li>S3 &amp; Lake Formation integration</li>
+          <li>MSK, Kinesis &amp; event streaming</li>
+        </ul>
+      </article>
+
+      <article class="eco-card reveal" style="--i:1">
+        <div class="eco-mark" data-vendor="azure">
+          <svg viewBox="0 0 32 32" width="32" height="32" fill="currentColor">
+            <path d="M11 4 L21 4 L29 27 L19 27 L21 22 L15 22 L19 13 Z M3 27 L11 13 L13 18 L7 27 Z"/>
+          </svg>
+          <span>Microsoft Azure</span>
+        </div>
+        <h4>Microsoft Azure</h4>
+        <p>Azure Databricks, ADLS Gen2, Event Hubs and Power BI — wired together with Entra ID and proper tenant isolation. Fabric migrations into Azure Databricks where it's the smarter path.</p>
+        <ul class="eco-tick">
+          <li>Azure Databricks &amp; ADLS Gen2</li>
+          <li>Event Hubs &amp; streaming</li>
+          <li>Power BI semantic models</li>
+        </ul>
+      </article>
+
+      <article class="eco-card reveal" style="--i:2">
+        <div class="eco-mark" data-vendor="dbt">
+          <svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor">
+            <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="2.2"/>
+            <rect x="14.5" y="6" width="3" height="11" rx="1.5"/>
+            <rect x="14.5" y="6" width="3" height="11" rx="1.5" transform="rotate(60 16 16)"/>
+            <rect x="14.5" y="6" width="3" height="11" rx="1.5" transform="rotate(120 16 16)"/>
+          </svg>
+          <span>dbt Labs</span>
+        </div>
+        <h4>dbt Labs</h4>
+        <p>dbt Core and dbt Cloud on Databricks with opinionated structure, tests, docs and CI. If your dbt project has turned into a 1,200-model tangle, we've seen it before and we know how to untangle it.</p>
+        <ul class="eco-tick">
+          <li>dbt on Databricks</li>
+          <li>Tests, docs, exposures, CI/CD</li>
+          <li>Refactoring legacy dbt projects</li>
+        </ul>
+      </article>
+
+      <article class="eco-card reveal" style="--i:3">
+        <div class="eco-mark" data-vendor="stream">
+          <svg viewBox="0 0 32 32" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+            <path d="M4 10 Q12 4 16 10 T28 10"/>
+            <path d="M4 16 Q12 10 16 16 T28 16"/>
+            <path d="M4 22 Q12 16 16 22 T28 22"/>
+          </svg>
+          <span>Streaming</span>
+        </div>
+        <h4>Kafka · Confluent · DLT</h4>
+        <p>Kafka, Confluent, Kinesis, Structured Streaming and Delta Live Tables. We pick the right primitive for the workload — never dragging in kit the team won't be able to operate.</p>
+        <ul class="eco-tick">
+          <li>Kafka / Confluent Cloud</li>
+          <li>DLT &amp; Structured Streaming</li>
+          <li>Schema registries &amp; governance</li>
+        </ul>
+      </article>
+
+      <article class="eco-card reveal" style="--i:4">
+        <div class="eco-mark" data-vendor="delta">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor">
+            <path d="M16 4 L29 27 L3 27 Z"/>
+          </svg>
+          <span>Delta Lake</span>
+        </div>
+        <h4>Delta Lake</h4>
+        <p>Open table format for the lakehouse. We design medallion architectures that exploit Delta's ACID guarantees, time travel, schema evolution and change data feeds.</p>
+        <ul class="eco-tick">
+          <li>Bronze / silver / gold modeling</li>
+          <li>CDC &amp; change data feeds</li>
+          <li>Performance tuning &amp; Z-ordering</li>
+        </ul>
+      </article>
+
+      <article class="eco-card reveal" style="--i:5">
+        <div class="eco-mark" data-vendor="bi">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4v24h24"/>
+            <path d="M8 22l5-7 5 4 6-10"/>
+          </svg>
+          <span>BI</span>
+        </div>
+        <h4>Power BI · Tableau</h4>
+        <p>Semantic models, governed datasets, and dashboard frameworks that read straight from the lakehouse — no extraction layer, no stale cubes, no nightly refresh fire drills.</p>
+        <ul class="eco-tick">
+          <li>Direct-query &amp; semantic layer</li>
+          <li>Governed datasets &amp; RLS</li>
+          <li>Tableau &amp; Power BI integration</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- Delivery footprint -->
+    <div class="footprint reveal">
+      <div class="footprint-head">
+        <span class="mono">— Delivery footprint</span>
+        <h3>Three geos, one team — without overnight handoffs.</h3>
+      </div>
+      <div class="footprint-grid">
+        <div class="fp">
+          <div class="fp-flag">🇺🇸</div>
+          <b>Charlotte</b>
+          <span>Client-facing delivery &amp; architecture · US East/Central hours</span>
+        </div>
+        <div class="fp">
+          <div class="fp-flag">🇮🇳</div>
+          <b>Bengaluru</b>
+          <span>Engineering &amp; 24/5 on-call · Resident Solution Architects</span>
+        </div>
+        <div class="fp">
+          <div class="fp-flag">🇧🇷</div>
+          <b>Brazil</b>
+          <span>Product UI team · Databricks Apps &amp; lakehouse-native interfaces</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HELIXCORE — Semantic Compute Control Plane -->
+<section class="helix-section" id="helixcore">
+  <div class="container">
+    <div class="helix-headline">
+      <div class="reveal">
+        <span class="mono">— Our flagship product</span>
+        <h2>HelixCore — a <span class="grad-text">semantic compute control plane</span> for Databricks.</h2>
+        <p>
+          A Databricks-native execution layer. <strong>Ontology-driven. Deterministic.</strong>
+          ABAC governance injected at compile time. Pre-execution risk and cost controls on every query
+          before a single DBU is consumed.
+        </p>
+        <p>
+          <strong>Eight deterministic pipeline stages. 50+ API endpoints. 10 production screens.</strong>
+          Built by BeesBridge. Powered by Databricks. Governed by design.
+        </p>
+      </div>
+
+      <div class="helix-side reveal">
+        <div class="helix-mark-row">
+          <div class="helix-mark">Hc</div>
+          <div>
+            <b>HelixCore Studio</b>
+            <span>Built by BeesBridge · Powered by Databricks</span>
+          </div>
+        </div>
+        <p>A semantic compiler, not a copilot. AI is the front door — execution is deterministic, ontology-driven, and governed by contract.</p>
+        <ul class="tick">
+          <li>Eight deterministic stages from intent to audit</li>
+          <li>ABAC governance, classification &amp; mask functions at compile time</li>
+          <li>Nine configurable guardrails — PASS, WARN, or BLOCK</li>
+          <li>Auto-bootstrap a new domain from any Unity Catalog schema</li>
+          <li>Native Databricks App — no data movement, full audit trace</li>
+        </ul>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a class="btn btn-primary shine" href="mailto:vdasari@beesbridge.us?subject=HelixCore%20Demo%20Request&body=Hi%20—%20I%27d%20like%20to%20see%20HelixCore%20Studio%20in%20action.%20Here%27s%20a%20bit%20about%20us%3A%0A%0A">
+            Request HelixCore Demo
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#contact">Talk to us</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Differentiators -->
+    <div class="helix-diff">
+      <div class="reveal" style="--i:0">
+        <b>01 · Ontology-Driven</b>
+        <h4>Living semantic model drives everything.</h4>
+        <p>Every query is validated, planned, and governed through the ontology. No black-box prompts.</p>
+      </div>
+      <div class="reveal" style="--i:1">
+        <b>02 · Deterministic</b>
+        <h4>No temperature variance.</h4>
+        <p>AI is the front door — execution is compiler-driven. Predictable, repeatable, auditable.</p>
+      </div>
+      <div class="reveal" style="--i:2">
+        <b>03 · ABAC Governance</b>
+        <h4>Attribute-based access at compile time.</h4>
+        <p>Classification hierarchy, mask functions, RLS predicates — injected before compute is consumed.</p>
+      </div>
+      <div class="reveal" style="--i:3">
+        <b>04 · Multi-Domain</b>
+        <h4>Same engine. Any domain.</h4>
+        <p>Supply chain, healthcare, QRA, payment integrity, accounting — adding a domain is configuration.</p>
+      </div>
+      <div class="reveal" style="--i:4">
+        <b>05 · Pre-Execution Intelligence</b>
+        <h4>Risk &amp; cost before compute.</h4>
+        <p>Risk scoring, cost estimation, nine configurable guardrails — evaluated on every query.</p>
+      </div>
+      <div class="reveal" style="--i:5">
+        <b>06 · Self-Service Bootstrap</b>
+        <h4>New domain in minutes.</h4>
+        <p>Point at any catalog schema — auto-detect entities, attributes, relationships, sensitivity. Review, approve, activate.</p>
+      </div>
+    </div>
+
+    <!-- 8 stages -->
+    <div class="stages-head reveal">
+      <h3>Eight deterministic stages — intent to audit.</h3>
+      <div class="stages-meta">PARSE → VALIDATE → PLAN → SCORE → ESTIMATE → GUARD → GOVERN → EXECUTE</div>
+    </div>
+    <div class="stages">
+      <div class="stage reveal" style="--i:0"><div class="step-num">01</div><h5>Parse</h5><p>NL to structured intent via Databricks Genie.</p></div>
+      <div class="stage reveal" style="--i:1"><div class="step-num">02</div><h5>Validate</h5><p>Check entities, fields and joins against live ontology.</p></div>
+      <div class="stage reveal" style="--i:2"><div class="step-num">03</div><h5>Plan</h5><p>Build inspectable execution plan from the ontology graph.</p></div>
+      <div class="stage reveal" style="--i:3"><div class="step-num">04</div><h5>Score</h5><p>Risk-assess across 6 heuristic dimensions.</p></div>
+      <div class="stage reveal" style="--i:4"><div class="step-num">05</div><h5>Estimate</h5><p>Project scan rows, data volume, DBU cost, runtime.</p></div>
+      <div class="stage reveal" style="--i:5"><div class="step-num">06</div><h5>Guard</h5><p>Nine guardrails: PASS, WARN, or BLOCK.</p></div>
+      <div class="stage reveal" style="--i:6"><div class="step-num">07</div><h5>Govern</h5><p>ABAC: CLS, RLS, tenant isolation at compile time.</p></div>
+      <div class="stage reveal" style="--i:7"><div class="step-num">08</div><h5>Execute + Audit</h5><p>Spark SQL on your warehouse; full audit trace returned.</p></div>
+    </div>
+
+    <div class="helix-cta reveal">
+      <div>
+        <b>HelixCore is a deployable accelerator — not a demo.</b>
+        <span>Bootstrap workshops, ABAC governance, guardrail config — deployed as part of delivery.</span>
+      </div>
+      <a class="btn btn-primary shine" href="#contact">Talk to the HelixCore team →</a>
+    </div>
+  </div>
+</section>
+
+<!-- INTERNAL ENGINEERING TOOLING -->
+<section class="tooling-section" id="tooling">
+  <div class="container">
+    <div class="tooling-headline">
+      <div class="reveal">
+        <span class="mono">— Internal engineering toolkit</span>
+        <h2>Every engagement starts from the same <span class="grad-text">5-minute baseline</span>.</h2>
+        <p>
+          We've built an internal scaffolding toolkit — codename <strong>bees-dbx</strong> — that produces a production-ready
+          BeesBridge Databricks app workspace in about five minutes. Skills declare the conventions. An MCP server makes
+          them callable. A studio gives engineers a visual surface on top.
+        </p>
+        <p>
+          Engineers spend the recovered week shipping features instead of yak-shaving project skeletons. It's not public —
+          it's how every BeesBridge engagement starts. And it keeps growing: <strong>every engagement we run feeds new
+          patterns, tools and conventions back into the toolkit</strong>. What ships today is a snapshot, not a ceiling.
+        </p>
+        <div class="tooling-meta">
+          <span class="tooling-pill"><b>Built by</b> BeesBridge</span>
+          <span class="tooling-pill"><b>Powered by</b> Databricks</span>
+          <span class="tooling-pill"><b>Driven by</b> Claude · MCP</span>
+        </div>
+      </div>
+
+      <div class="tooling-stats reveal">
+        <div class="tstat"><b data-count="11">0</b><span>MCP tools</span></div>
+        <div class="tstat"><b data-count="4">0</b><span>Skills</span></div>
+        <div class="tstat"><b data-count="6">0</b><span>Slash workflows</span></div>
+        <div class="tstat"><b>~5<span style="font-size:.55em;letter-spacing:0;"> min</span></b><span>From zero to scaffolded app</span></div>
+      </div>
+    </div>
+
+    <!-- Three-layer architecture -->
+    <div class="layers reveal">
+      <div class="layer">
+        <div class="layer-num">01</div>
+        <div class="layer-name">Skills</div>
+        <div class="layer-tag">Declarative conventions</div>
+        <p>Four <code>SKILL.md</code> files encode the BeesBridge way of structuring Databricks apps — bootstrap, builder, services, UI. Each one ships templates, scripts and reference docs.</p>
+        <ul>
+          <li>dbx-bootstrap — workspace root</li>
+          <li>dbx-app-builder — DAB-deployed wheel</li>
+          <li>dbx-app-services — Flask + Swagger</li>
+          <li>dbx-app-ui — React + Flask</li>
+        </ul>
+      </div>
+      <div class="layer-arrow" aria-hidden="true">→</div>
+      <div class="layer">
+        <div class="layer-num">02</div>
+        <div class="layer-name">MCP Server</div>
+        <div class="layer-tag">Callable from any client</div>
+        <p>The skills exposed as a Model Context Protocol server — 11 tools, 4 resources, 6 prompts. Reachable from Claude Code, Claude Desktop, Cursor, and our studio.</p>
+        <ul>
+          <li>scaffold_workspace · inspect_workspace</li>
+          <li>add_builder · add_services · add_ui</li>
+          <li>run_make_target · check_app_health</li>
+          <li>set_github_secrets · validate_skill</li>
+        </ul>
+      </div>
+      <div class="layer-arrow" aria-hidden="true">→</div>
+      <div class="layer layer-featured">
+        <div class="layer-num">03</div>
+        <div class="layer-name">Studio</div>
+        <div class="layer-tag">Engineer-facing surface</div>
+        <p>A local web UI on top of the MCP server. Chat on the left, activity timeline + files + notes on the right. Slash menu for the pre-canned workflows. One continuous conversation from zero to deployable app.</p>
+        <ul>
+          <li>Live activity timeline of tool calls</li>
+          <li>Files tree refreshed as work lands</li>
+          <li>Notes saved into the workspace</li>
+          <li>"Open in VS Code" handoff</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- What gets produced -->
+    <div class="produced reveal">
+      <div class="produced-head">
+        <span class="mono">— What every scaffold produces</span>
+        <h3>One workspace. Three deployable sub-projects.</h3>
+      </div>
+      <div class="produced-grid">
+        <div class="prod">
+          <div class="prod-tag prod-tag-ui">UI</div>
+          <b>React + Flask</b>
+          <p>React + Vite + TypeScript front end, Flask backend that proxies <code>/api/*</code> to services. Deployed as a Databricks App.</p>
+          <span class="prod-cadence">Frequent · design tweaks</span>
+        </div>
+        <div class="prod">
+          <div class="prod-tag prod-tag-svc">Services</div>
+          <b>Flask + Swagger</b>
+          <p>Flask + gunicorn API with Swagger UI. Optional Lakebase Postgres. Optional auto-install of the builder wheel from Unity Catalog volumes. Deployed as a Databricks App.</p>
+          <span class="prod-cadence">Medium · business logic</span>
+        </div>
+        <div class="prod">
+          <div class="prod-tag prod-tag-bld">Builder</div>
+          <b>Python wheel + DAB</b>
+          <p>Python wheel with <code>pyproject.toml</code> (uv + hatchling) and a <code>databricks.yml</code> with dev/test/prod targets. Deployed as a Databricks Job via Asset Bundles.</p>
+          <span class="prod-cadence">Slow · data pipeline</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Always growing strip -->
+    <div class="growing reveal">
+      <div class="growing-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 20V6"/>
+          <path d="M5 13l7-7 7 7"/>
+          <circle cx="12" cy="20" r="1.5" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="growing-body">
+        <b>The toolkit is ever-growing.</b>
+        <p>
+          What you see above is a snapshot of where the toolkit stands today. Every BeesBridge engagement is a forcing function —
+          new patterns, new tools, new conventions get folded back in. Recent additions: ABAC governance hooks, Lakebase support,
+          MCP resource sharing, automated GitHub secrets sync. <em>Tomorrow's engagements will add more.</em>
+        </p>
+      </div>
+      <div class="growing-meta">
+        <span class="growing-tag">+ ABAC hooks</span>
+        <span class="growing-tag">+ Lakebase</span>
+        <span class="growing-tag">+ MCP resources</span>
+        <span class="growing-tag">+ HTTP transport (next)</span>
+        <span class="growing-tag">+ Real RAG (next)</span>
+      </div>
+    </div>
+
+    <div class="tooling-cta reveal">
+      <div>
+        <b>Want to see it scaffold a workspace in real time?</b>
+        <span>A 4-minute walkthrough of the studio: bootstrap → builder → services → UI → CI green. Watch below, or request a deeper live walkthrough.</span>
+      </div>
+      <a class="btn btn-primary shine" href="mailto:vdasari@beesbridge.us?subject=Request%3A%20bees-dbx%20studio%20walkthrough&body=Hi%20Venkat%20%E2%80%94%20I%27d%20like%20to%20see%20the%20bees-dbx%20studio%20demo.%20Here%27s%20a%20bit%20about%20us%3A%0A%0A">
+        Request a live walkthrough →
+      </a>
+    </div>
+
+    <!-- Loom demo video -->
+    <div class="demo-video reveal">
+      <div class="demo-video-head">
+        <span class="mono">— 4-min demo · Loom</span>
+        <h3>Studio Tour → Scaffold → Inspect → Open in VS Code</h3>
+      </div>
+      <div class="loom-frame">
+        <iframe
+          src="https://www.loom.com/embed/126127cb8a4942f49cda37c7c9ece9fa?hideEmbedTopBar=true"
+          frameborder="0"
+          webkitallowfullscreen
+          mozallowfullscreen
+          allowfullscreen
+          allow="autoplay; fullscreen; picture-in-picture"
+          title="bees-dbx studio walkthrough"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PSA PLATFORM -->
+<section class="psa-section" id="psa">
+  <div class="container">
+    <div class="psa-head reveal">
+      <span class="mono">— BeesBridge PSA</span>
+      <h2>The PSA platform built <span class="grad-text">for Databricks consulting operations</span>.</h2>
+      <p style="color:var(--ink-dim); font-size: 17px; max-width: 680px; margin: 12px auto 0;">
+        End-to-end professional services automation: resources, time, POs, invoicing,
+        contractor payments, analytics — and an AI assistant that already knows your data.
+      </p>
+    </div>
+
+    <div class="psa-stats reveal">
+      <div><b>31</b><span>Dashboard Views</span></div>
+      <div><b>6</b><span>API Integrations</span></div>
+      <div><b>22+</b><span>AI-Powered Tools</span></div>
+      <div><b>4</b><span>User Roles</span></div>
+      <div><b>5</b><span>Platforms</span></div>
+    </div>
+
+    <!-- Mockup -->
+    <div class="psa-mockup reveal">
+      <div class="mock-glow"></div>
+      <div class="mock-window">
+        <div class="mock-chrome">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+          <div class="mock-url">app.beesbridge.us / dashboard</div>
+        </div>
+        <div class="mock-body">
+          <aside class="mock-side">
+            <div class="m-logo">PSA</div>
+            <div class="m-item active">Dashboard</div>
+            <div class="m-item">Resources</div>
+            <div class="m-item">Timesheets</div>
+            <div class="m-item">POs &amp; SOWs</div>
+            <div class="m-item">Invoicing</div>
+            <div class="m-item">AR &amp; Cash Flow</div>
+            <div class="m-item">Analytics</div>
+            <div class="m-item buzz"><span class="buzz-dot"></span> Buzz AI</div>
+          </aside>
+          <main class="mock-main">
+            <div class="mock-row">
+              <div class="kpi"><span>Revenue (12mo)</span><b>$4.82M</b><i class="up">▲ 12.3%</i></div>
+              <div class="kpi"><span>AR Outstanding</span><b>$687K</b><i class="down">▼ 4.1%</i></div>
+              <div class="kpi"><span>Utilization</span><b>87%</b><i class="up">▲ 2.0%</i></div>
+              <div class="kpi"><span>Active POs</span><b>34</b><i>↘ 2 expiring</i></div>
+            </div>
+            <div class="mock-row">
+              <div class="card-chart">
+                <div class="card-h">Revenue trend</div>
+                <svg viewBox="0 0 320 120" preserveAspectRatio="none" class="spark">
+                  <defs>
+                    <linearGradient id="sg" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0" stop-color="#F08000" stop-opacity=".50"/>
+                      <stop offset="1" stop-color="#F08000" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M0,90 L30,80 L60,85 L90,70 L120,75 L150,55 L180,60 L210,40 L240,48 L270,30 L300,25 L320,18 L320,120 L0,120 Z" fill="url(#sg)"/>
+                  <path d="M0,90 L30,80 L60,85 L90,70 L120,75 L150,55 L180,60 L210,40 L240,48 L270,30 L300,25 L320,18" fill="none" stroke="#FFA433" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="card-list">
+                <div class="card-h">AR Aging</div>
+                <div class="ar-row"><span>Current</span><div class="bar"><i style="width:74%;background:#7be5a3"></i></div><b>$412K</b></div>
+                <div class="ar-row"><span>30 days</span><div class="bar"><i style="width:42%;background:#ffd35a"></i></div><b>$168K</b></div>
+                <div class="ar-row"><span>60 days</span><div class="bar"><i style="width:22%;background:#ff8c00"></i></div><b>$78K</b></div>
+                <div class="ar-row"><span>90+ days</span><div class="bar"><i style="width:8%;background:#ff5e7a"></i></div><b>$29K</b></div>
+              </div>
+            </div>
+            <div class="mock-row">
+              <div class="buzz-card">
+                <div class="buzz-h">
+                  <span class="buzz-avatar">B</span>
+                  <div>
+                    <b>Buzz</b>
+                    <span>AI Assistant · 22 tools online · Powered by Claude on Databricks</span>
+                  </div>
+                </div>
+                <div class="buzz-msg you">Which POs are depleting in the next 30 days?</div>
+                <div class="buzz-msg ai">
+                  3 POs are projected to deplete by mid-June:
+                  <em>PO-1184 (Acme), PO-2031 (Helix Health), PO-2210 (Northwind)</em>.
+                  Want me to draft renewal emails?
+                </div>
+                <div class="buzz-input"><span>Ask Buzz anything…</span><i>↵</i></div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature cards -->
+    <div class="psa-grid">
+      <div class="psa-card reveal" style="--i:0">
+        <span class="psa-num">01</span>
+        <h3>Resource &amp; Project Management</h3>
+        <ul>
+          <li>End-to-end PO/SOW lifecycle</li>
+          <li>Resource allocation &amp; capacity planning</li>
+          <li>Hourly, milestone &amp; fixed billing</li>
+          <li>No-PO assignment gates with alerts</li>
+        </ul>
+      </div>
+      <div class="psa-card reveal" style="--i:1">
+        <span class="psa-num">02</span>
+        <h3>Time &amp; Billing</h3>
+        <ul>
+          <li>Mobile-first timesheet entry (PWA + native)</li>
+          <li>Timecard processing with PO linkage</li>
+          <li>Multi-mode invoice generation</li>
+          <li>QuickBooks Online integration</li>
+        </ul>
+      </div>
+      <div class="psa-card reveal" style="--i:2">
+        <span class="psa-num">03</span>
+        <h3>Financial Operations</h3>
+        <ul>
+          <li>Real-time AR &amp; cash flow dashboards</li>
+          <li>30 / 60 / 90-day inflow projections</li>
+          <li>Payment reconciliation with QBO</li>
+          <li>Contractor invoices &amp; vendor bills</li>
+        </ul>
+      </div>
+      <div class="psa-card buzz-feature reveal" style="--i:3">
+        <span class="psa-num">04</span>
+        <div class="buzz-tag"><span class="buzz-dot"></span> Featured</div>
+        <h3>Buzz — Conversational AI</h3>
+        <ul>
+          <li>Powered by Claude (Anthropic) on Databricks</li>
+          <li>22+ registered tools: POs, AR, timesheets, capacity</li>
+          <li>AI document extraction for PO / SOW PDFs</li>
+          <li>Voice input, role-aware catalog, thread persistence</li>
+          <li>Downloadable PDF reports</li>
+        </ul>
+      </div>
+      <div class="psa-card reveal" style="--i:4">
+        <span class="psa-num">05</span>
+        <h3>Document &amp; Email Automation</h3>
+        <ul>
+          <li>Automated email scanning for PO intake</li>
+          <li>AI-powered PDF extraction</li>
+          <li>SharePoint document storage</li>
+          <li>SoW milestone parsing</li>
+        </ul>
+      </div>
+      <div class="psa-card reveal" style="--i:5">
+        <span class="psa-num">06</span>
+        <h3>Analytics &amp; Reporting</h3>
+        <ul>
+          <li>12-month rolling revenue trend</li>
+          <li>Revenue by client &amp; resource</li>
+          <li>Margin &amp; utilization radar</li>
+          <li>AR aging buckets · PDF export</li>
+        </ul>
+      </div>
+      <div class="psa-card reveal" style="--i:6">
+        <span class="psa-num">07</span>
+        <h3>Multi-Platform Access</h3>
+        <ul>
+          <li>Web dashboard (full-featured)</li>
+          <li>Installable PWA</li>
+          <li>iOS &amp; Android via Capacitor</li>
+          <li>Mobile-optimized, touch-friendly</li>
+        </ul>
+      </div>
+      <div class="psa-card reveal" style="--i:7">
+        <span class="psa-num">08</span>
+        <h3>Roles &amp; Security</h3>
+        <ul>
+          <li>Admin, Manager, Employee, External AP</li>
+          <li>Password + TOTP MFA</li>
+          <li>Role simulation via "View-as" toggle</li>
+          <li>SQL-level access control</li>
+        </ul>
+      </div>
+      <div class="psa-card reveal" style="--i:8">
+        <span class="psa-num">09</span>
+        <h3>Integrations</h3>
+        <ul>
+          <li>QuickBooks Online (OAuth2)</li>
+          <li>Microsoft Graph — Outlook &amp; SharePoint</li>
+          <li>Databricks Foundation Models</li>
+          <li>Databricks Claude · Capacitor</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="psa-cta reveal">
+      <div>
+        <h3>See PSA running on your data.</h3>
+        <p>A 30-minute demo — bring your spreadsheets, leave with a working dashboard.</p>
+      </div>
+      <a href="mailto:vdasari@beesbridge.us?subject=PSA%20Demo%20Request" class="btn btn-primary shine">
+        Request PSA Demo
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="mono">— What clients say</span>
+      <h2>Real stories from real customers.</h2>
+      <p>Quotes from the data and engineering leaders we've built for — at Abacus Insights, IQVIA and HealthVerity.</p>
+    </div>
+
+    <div class="tests">
+      <div class="test reveal" style="--i:0">
+        <span class="test-quote">"</span>
+        <p class="q">
+          I would highly recommend Beesbridge, a data engineering firm that specializes in building scalable,
+          high-performance data infrastructure. They have a proven track record of delivering innovative solutions
+          that enable businesses to unlock the full potential of their data. They helped us implement Next Generation
+          Architecture for Delta Lake using Databricks running on both AWS and Azure, and we were extremely pleased
+          with the results.
+        </p>
+        <div class="who">
+          <div class="ava" style="background:linear-gradient(135deg,#F08000,#FFA433);">NA</div>
+          <div>
+            <b>Navdeep Alam</b>
+            <span>CTO, Abacus Insights</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="test reveal" style="--i:1">
+        <span class="test-quote">"</span>
+        <p class="q">
+          It has been a pleasure to work with Beesbridge LLC on a number of large-scale data initiatives for healthcare
+          applications. They specialize in optimizing both performance and costs for petabyte-scale workloads. You bring
+          the Beesbridge team in when you face complex, multimodal data challenges and want to demonstrate value to
+          demanding business stakeholders. They are consummate consulting professionals — they attack problems,
+          iterate quickly, remain flexible, and keep communication open.
+        </p>
+        <div class="who">
+          <div class="ava" style="background:linear-gradient(135deg,#3b5bdb,#8957e5);color:#fff;">JM</div>
+          <div>
+            <b>Jim McKeown</b>
+            <span>SVP, IT, IQVIA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="test reveal" style="--i:2">
+        <span class="test-quote">"</span>
+        <p class="q">
+          HealthVerity is currently in month 5 of replatforming our data systems with Beesbridge. With only 5 people
+          on the team, Beesbridge is making impressive progress. Performance tests show AWS cost cuts up to <strong>10×</strong>
+          — a huge win. The team is result-oriented, delivering best-of-art engineering: fully automated resilient
+          pipelines, event-driven orchestration, PII masking, ML-based mapping. Highly recommend this team!
+        </p>
+        <div class="who">
+          <div class="ava" style="background:linear-gradient(135deg,#5eead4,#3b82f6);color:#0a1a2a;">AK</div>
+          <div>
+            <b>Anfisa Kaydak</b>
+            <span>VP, Data Product &amp; Engineering, HealthVerity</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="section" id="cases" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="mono">— Case studies</span>
+      <h2>What "production Databricks" actually looks like.</h2>
+      <p>Three engagements, three different problems, three concrete numbers. Names are public with permission; the numbers come from our customers' own statements.</p>
+    </div>
+
+    <div class="cases">
+      <!-- Case 1 -->
+      <article class="case reveal" style="--i:0">
+        <div class="case-meta">
+          <span class="case-pill">Healthcare data platform</span>
+          <span class="case-client">HealthVerity</span>
+        </div>
+        <div class="case-headline">
+          <div class="case-stat">
+            <b>10<span class="case-stat-x">×</span></b>
+            <span>AWS cost reduction projected on the new platform</span>
+          </div>
+        </div>
+        <h3>5-person team. 5-month replatform. Confidence "very high across the org."</h3>
+        <div class="case-cols">
+          <div>
+            <div class="case-h">Challenge</div>
+            <p>HealthVerity needed to replatform their existing data systems by year-end — an aggressive deadline most vendors said couldn't be hit.</p>
+          </div>
+          <div>
+            <div class="case-h">Approach</div>
+            <p>Fully automated, resilient pipelines · metadata-driven configuration · event-driven orchestration · staging file stream chunking · automated infrastructure with exfiltration · PII masking and data lineage · ML-based mapping of incoming files.</p>
+          </div>
+          <div>
+            <div class="case-h">Outcome</div>
+            <p>MVP shipped on time. Performance testing confirmed up to 10× AWS cost reduction. Databricks best practices applied throughout.</p>
+          </div>
+        </div>
+        <div class="case-foot">
+          <span class="case-quote">"Very happy with Beesbridge so far and highly recommend this team." — Anfisa Kaydak, VP Data Product &amp; Engineering, HealthVerity</span>
+        </div>
+      </article>
+
+      <!-- Case 2 -->
+      <article class="case reveal" style="--i:1">
+        <div class="case-meta">
+          <span class="case-pill">Healthcare data quality</span>
+          <span class="case-client">Abacus Insights</span>
+        </div>
+        <div class="case-headline">
+          <div class="case-stat">
+            <b>Featured</b>
+            <span>by Databricks on the official blog</span>
+          </div>
+        </div>
+        <h3>Next-generation Delta Lake architecture across AWS and Azure.</h3>
+        <div class="case-cols">
+          <div>
+            <div class="case-h">Challenge</div>
+            <p>Abacus needed an ANTLR-based, scalable data quality engine that could enforce rules on healthcare data at the lakehouse level — across two clouds.</p>
+          </div>
+          <div>
+            <div class="case-h">Approach</div>
+            <p>Next-gen Delta Lake architecture · Databricks on AWS and Azure · ANTLR grammar engine on Spark · automated data quality framework · data grading for health plans · Unity Catalog governance.</p>
+          </div>
+          <div>
+            <div class="case-h">Outcome</div>
+            <p>Production framework now driving data usability for health plans. Work was featured by Databricks on the official engineering blog as a reference customer story.</p>
+          </div>
+        </div>
+        <div class="case-foot">
+          <a target="_blank" rel="noopener" class="case-link" href="https://www.databricks.com/blog/driving-data-usability-health-plans-through-simplified-data-quality-enforcement-databricks">
+            Read the Databricks blog post ↗
+          </a>
+          <span class="case-quote">"Extremely pleased with the results … wealth of expertise … kept us up-to-date throughout." — Navdeep Alam, CTO, Abacus Insights</span>
+        </div>
+      </article>
+
+      <!-- Case 3 -->
+      <article class="case reveal" style="--i:2">
+        <div class="case-meta">
+          <span class="case-pill">Healthcare analytics · multi-cloud</span>
+          <span class="case-client">IQVIA</span>
+        </div>
+        <div class="case-headline">
+          <div class="case-stat">
+            <b>Petabyte<span class="case-stat-x">.</span></b>
+            <span>scale workloads — performance &amp; cost optimized</span>
+          </div>
+        </div>
+        <h3>Multimodal data, multiple cost drivers, demanding business stakeholders.</h3>
+        <div class="case-cols">
+          <div>
+            <div class="case-h">Challenge</div>
+            <p>IQVIA needed to optimize performance and cost on petabyte-scale workloads across Snowflake, Databricks, Hadoop, Elasticsearch, MongoDB and Solr — and demonstrate value fast to internal stakeholders.</p>
+          </div>
+          <div>
+            <div class="case-h">Approach</div>
+            <p>Cost-driver analysis across pipelines · troubleshooting and refactoring existing workloads · platform-appropriate primitives instead of one-size-fits-all · iterative problem solving with open communication.</p>
+          </div>
+          <div>
+            <div class="case-h">Outcome</div>
+            <p>"Near-immediate return on consulting dollar investment." Multi-engagement relationship across multiple data initiatives.</p>
+          </div>
+        </div>
+        <div class="case-foot">
+          <span class="case-quote">"Consummate consulting professionals … I would strongly recommend Beesbridge for any big data initiative." — Jim McKeown, SVP IT, IQVIA</span>
+        </div>
+      </article>
+
+      <!-- Case 4: Premier — referenced from public Databricks event material -->
+      <article class="case reveal" style="--i:3">
+        <div class="case-meta">
+          <span class="case-pill">Healthcare AI · health-system analytics</span>
+          <span class="case-event-note">Referenced from publicly-presented Databricks event material</span>
+        </div>
+        <div class="case-headline">
+          <div class="case-stat">
+            <b>77</b>
+            <span>health-system subscribers reached by the Insights initiative</span>
+          </div>
+        </div>
+        <h3>"Progress Through Partnership" — questions, not clicks.</h3>
+        <div class="case-cols">
+          <div>
+            <div class="case-h">Public initiative</div>
+            <p>An "AI Enabled Blackbelt" program shifting health-system analytics from dashboard clicks to natural-language questions — presented publicly at a Databricks event under the banner "Progress Through Partnership: Many Hands Make Light Work."</p>
+          </div>
+          <div>
+            <div class="case-h">Partnership lineup</div>
+            <p>BeesBridge listed alongside Lovelytics, IMO Health and Databricks as delivery partners on the initiative. We don't claim a shout-out — only that the slide was shown publicly and our logo is on it.</p>
+          </div>
+          <div>
+            <div class="case-h">Where we fit</div>
+            <p>Data engineering and lakehouse work supporting a "questions, not clicks" analytics experience at scale — across a 77-subscriber health-system footprint.</p>
+          </div>
+        </div>
+        <div class="case-foot">
+          <span class="case-quote">Source: publicly-presented Databricks event slide. No customer endorsement implied — partnership-style references only.</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="mono">— Why teams keep us around</span>
+      <h2>Resident Solution Architects. Real outcomes. No bench.</h2>
+      <p>Every engineer on a BeesBridge Databricks engagement is a Resident Solution Architect — trained and operating the way Databricks itself deploys senior talent into customers. You never pay to train a junior on your data.</p>
+    </div>
+    <div class="proof-grid">
+      <div class="reveal">
+        <p style="color:var(--ink-dim);font-size:17px;max-width:520px;">
+          We've spent the last several years shipping Databricks workloads at every scale — from a first lakehouse
+          for a healthcare startup, to petabyte migrations and governed Generative AI platforms. Engineering is the
+          part we love, and it shows up in the work.
+        </p>
+        <a class="btn btn-ghost" href="#about" style="margin-top:20px;">Read our story →</a>
+      </div>
+      <div class="proof-numbers reveal">
+        <div class="num-card"><div class="big">150+</div><div class="desc">Production Databricks engagements delivered</div></div>
+        <div class="num-card"><div class="big">30+</div><div class="desc">Engineers across Charlotte, Bengaluru &amp; Brazil</div></div>
+        <div class="num-card"><div class="big">100%</div><div class="desc">Resident Solution Architects on Databricks</div></div>
+        <div class="num-card"><div class="big">24/5</div><div class="desc">Follow-the-sun delivery across three time zones</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK + SCOPING SPRINT -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="mono">— How we work</span>
+      <h2>Two-week scope, then ship.</h2>
+      <p>We don't do six-month discovery. You see the plan, the team, and the price inside two weeks — and you can walk away if it isn't a fit.</p>
+    </div>
+
+    <!-- Scoping sprint detail -->
+    <div class="sprint reveal">
+      <div class="sprint-left">
+        <div class="sprint-tag">
+          <span class="sprint-pulse"></span>
+          THE 2-WEEK SCOPING SPRINT
+        </div>
+        <h3>The plan, the team, and the price — before you commit a dollar of delivery.</h3>
+        <p>The scoping sprint is a fixed-fee engagement that ends with a written plan. If you decide not to proceed, you keep the plan and we part as friends. Most clients do proceed — but the option not to is the point.</p>
+
+        <div class="sprint-cols">
+          <div class="sprint-col">
+            <div class="sprint-col-h">What we do</div>
+            <ul>
+              <li>Review your stack &amp; pipelines</li>
+              <li>Interview product, data &amp; ops</li>
+              <li>Audit costs and bottlenecks</li>
+              <li>Define success metrics</li>
+            </ul>
+          </div>
+          <div class="sprint-col">
+            <div class="sprint-col-h">What you get</div>
+            <ul>
+              <li>Written architecture &amp; plan</li>
+              <li>Effort estimate by milestone</li>
+              <li>Named RSAs for delivery</li>
+              <li>Fixed-fee or T&amp;M proposal</li>
+            </ul>
+          </div>
+          <div class="sprint-col">
+            <div class="sprint-col-h">Terms</div>
+            <ul>
+              <li>Fixed fee, fully credited if you proceed</li>
+              <li>Mutual NDA on day one</li>
+              <li>You own every artifact we produce</li>
+              <li>Two-week turnaround, start to plan</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="sprint-right">
+        <div class="sprint-card">
+          <div class="sprint-num">14</div>
+          <div class="sprint-num-lbl">DAYS</div>
+        </div>
+        <div class="sprint-arrow">↓</div>
+        <div class="sprint-card sprint-card-sec">
+          <div class="sprint-num">1</div>
+          <div class="sprint-num-lbl">WRITTEN PLAN</div>
+        </div>
+        <div class="sprint-arrow">↓</div>
+        <div class="sprint-card sprint-card-go">
+          <div class="sprint-num">→</div>
+          <div class="sprint-num-lbl">SHIP OR WALK</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 steps -->
+    <div class="steps">
+      <div class="step reveal" style="--i:0">
+        <div class="step-n">01</div>
+        <h4>Scoping sprint</h4>
+        <p>Two weeks. We review your stack, interview your team, and produce a written plan with effort, cost, and milestones.</p>
+      </div>
+      <div class="step reveal" style="--i:1">
+        <div class="step-n">02</div>
+        <h4>Deliver in slices</h4>
+        <p>Four to twelve week delivery sprints with a working artifact at the end of each. Nothing goes dark for months.</p>
+      </div>
+      <div class="step reveal" style="--i:2">
+        <div class="step-n">03</div>
+        <h4>Prove the outcome</h4>
+        <p>Every sprint is measured against a number we picked together at kickoff — latency, uptime, adoption, spend.</p>
+      </div>
+      <div class="step reveal" style="--i:3">
+        <div class="step-n">04</div>
+        <h4>Hand over or stay on</h4>
+        <p>Your team owns the code, the runbooks, and the decisions. We stay as long as you want us to — and no longer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="mono">— Industries</span>
+      <h2>Where we've done this before.</h2>
+      <p>We go deep in a few sectors rather than wide in all of them. Healthcare data is our strongest domain — Abacus Insights, HealthVerity, IQVIA, Definitive Healthcare, Premier Inc.</p>
+    </div>
+    <div class="industries">
+      <div class="ind reveal" style="--i:0"><h4>Healthcare data</h4><p>Payers, providers, healthcare data platforms, HEDIS reporting, clinical warehouses, HIPAA-ready pipelines.</p></div>
+      <div class="ind reveal" style="--i:1"><h4>Financial services</h4><p>Regulatory reporting, fraud analytics, customer 360, real-time risk monitoring on Databricks.</p></div>
+      <div class="ind reveal" style="--i:2"><h4>Retail &amp; CPG</h4><p>Demand forecasting, inventory optimization, customer analytics at store-level granularity.</p></div>
+      <div class="ind reveal" style="--i:3"><h4>SaaS &amp; tech</h4><p>Product analytics, usage-based billing data, growth &amp; experimentation platforms.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY & COMPLIANCE -->
+<section class="section" id="security" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="mono">— Security &amp; compliance</span>
+      <h2>Healthcare-grade by default.</h2>
+      <p>We've spent enough time inside payer, provider and healthcare-data-platform environments to take security seriously by reflex — not because procurement asked. Here's what every BeesBridge engagement bakes in.</p>
+    </div>
+
+    <div class="security">
+      <div class="sec-card reveal" style="--i:0">
+        <div class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6z"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+        </div>
+        <b>HIPAA-ready pipelines</b>
+        <p>BAA-aware data flows · de-identification patterns · audit trails by default · access scoped to the resource group, not the human.</p>
+      </div>
+
+      <div class="sec-card reveal" style="--i:1">
+        <div class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+        </div>
+        <b>PII masking &amp; lineage</b>
+        <p>ML-based PII detection · column-level masking with Unity Catalog · end-to-end lineage from source to dashboard.</p>
+      </div>
+
+      <div class="sec-card reveal" style="--i:2">
+        <div class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 3v18M3 12h18M5 7c3 2 11 2 14 0M5 17c3-2 11-2 14 0"/>
+          </svg>
+        </div>
+        <b>GDPR-aware design</b>
+        <p>Right-to-erasure flows · data minimization patterns · cross-border handling between US, EU and India tenants.</p>
+      </div>
+
+      <div class="sec-card reveal" style="--i:3">
+        <div class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 7h18M3 12h18M3 17h18"/>
+            <circle cx="6" cy="7" r="1.5"/>
+            <circle cx="14" cy="12" r="1.5"/>
+            <circle cx="9" cy="17" r="1.5"/>
+          </svg>
+        </div>
+        <b>Unity Catalog governance</b>
+        <p>RBAC + ABAC at compile time (via HelixCore) · classification hierarchies · row-level security predicates · tenant isolation.</p>
+      </div>
+
+      <div class="sec-card reveal" style="--i:4">
+        <div class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2"/>
+            <path d="M21 12h-7a2 2 0 1 0 0 4h7z"/>
+          </svg>
+        </div>
+        <b>Private networking</b>
+        <p>Default-deny network posture · Databricks inside your VPC/VNet · least-privilege IAM · CloudTrail/Activity audit on every action.</p>
+      </div>
+
+      <div class="sec-card reveal" style="--i:5">
+        <div class="sec-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v20M2 12h20"/>
+            <circle cx="12" cy="12" r="9"/>
+          </svg>
+        </div>
+        <b>SOC 2-aligned process</b>
+        <p>Change management · access reviews · encrypted secrets · MFA-enforced access · documented runbooks your auditor can read.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="mono">— Frequently asked</span>
+      <h2>The questions every prospect asks before emailing.</h2>
+      <p>If yours isn't here, send it to <a href="mailto:admin@beesbridge.us" style="color:var(--accent);">admin@beesbridge.us</a> and we'll answer it in plain English.</p>
+    </div>
+
+    <div class="faq">
+      <details class="faq-item reveal" style="--i:0">
+        <summary>
+          <span>How small an engagement do you take?</span>
+          <span class="faq-mark" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-body">
+          <p>Two-week scoping sprints are the floor. After that, the smallest delivery engagement we typically take is a four-week sprint with a single Resident Solution Architect. Below that, you don't need a firm — you need a contractor.</p>
+        </div>
+      </details>
+
+      <details class="faq-item reveal" style="--i:1">
+        <summary>
+          <span>Do you do fixed bid, or only time &amp; materials?</span>
+          <span class="faq-mark" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-body">
+          <p>Both. We prefer fixed-bid milestones once a scoping sprint has produced a real plan — fixed bids on top of a vague brief are just an argument waiting to happen. Smaller, well-scoped pieces of work are fixed-bid by default. Longer, exploratory engagements run T&amp;M with weekly burn reports.</p>
+        </div>
+      </details>
+
+      <details class="faq-item reveal" style="--i:2">
+        <summary>
+          <span>Who owns the code and IP?</span>
+          <span class="faq-mark" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-body">
+          <p>You do. Every artifact produced under a BeesBridge engagement — code, runbooks, architecture diagrams, documentation — is transferred to your team on delivery. The only exception is HelixCore Studio itself, which is licensed.</p>
+        </div>
+      </details>
+
+      <details class="faq-item reveal" style="--i:3">
+        <summary>
+          <span>Can we get US-only resourcing? Or India-only?</span>
+          <span class="faq-mark" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-body">
+          <p>Yes. Many of our healthcare clients require US-only data access for specific workloads — we staff those entirely from Charlotte and the appropriate roles. Conversely, cost-sensitive engagements can run primarily out of Bengaluru with a Charlotte lead. The three-geo footprint is a feature, not a forced bundle.</p>
+        </div>
+      </details>
+
+      <details class="faq-item reveal" style="--i:4">
+        <summary>
+          <span>How fast can you start?</span>
+          <span class="faq-mark" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-body">
+          <p>Scoping sprints typically kick off within one to two weeks of the first call. Delivery engagements ramp the week after the scoping plan is signed — we don't hold dates with deposits, but we also don't take more work than we can staff with named people.</p>
+        </div>
+      </details>
+
+      <details class="faq-item reveal" style="--i:5">
+        <summary>
+          <span>What about MSAs, BAAs, security reviews?</span>
+          <span class="faq-mark" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-body">
+          <p>We've been through procurement at IQVIA, HealthVerity, Abacus Insights and Premier — we'll fit your forms. BAAs are routine. Mutual NDAs go out before the scoping sprint. We're happy to participate in your standard security questionnaire process.</p>
+        </div>
+      </details>
+
+      <details class="faq-item reveal" style="--i:6">
+        <summary>
+          <span>Are you hiring? (We have engineers we'd like to send your way.)</span>
+          <span class="faq-mark" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-body">
+          <p>We're deliberately small and currently over-staffed. We're not hiring at the moment — but we keep a small inbound list for when we are. Send your resume to <a href="mailto:admin@beesbridge.us">admin@beesbridge.us</a> and we'll reach out if a fit opens up.</p>
+        </div>
+      </details>
+
+      <details class="faq-item reveal" style="--i:7">
+        <summary>
+          <span>Can we license HelixCore without a consulting engagement?</span>
+          <span class="faq-mark" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-body">
+          <p>HelixCore Studio is deployed as part of a BeesBridge delivery — the bootstrap workshop, ABAC configuration, and guardrail tuning are part of the value. We can discuss licensing-only arrangements, but the product was designed to ship alongside our delivery method, not in place of it.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="section" id="insights" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="mono">— Writing &amp; insights</span>
+      <h2>How we think about Databricks engineering.</h2>
+      <p>Field notes from our engineers — published on Medium and the Databricks blog. Pragmatic, opinionated, written from the work.</p>
+    </div>
+    <div class="article-grid">
+      <a class="article reveal" target="_blank" rel="noopener" style="--i:0" href="https://www.databricks.com/blog/driving-data-usability-health-plans-through-simplified-data-quality-enforcement-databricks">
+        <span class="article-src">databricks.com · Featured</span>
+        <h3>Driving Data Usability for Health Plans through Simplified Data Quality Enforcement on Databricks</h3>
+        <div class="article-meta"><span>Healthcare · Data Quality</span><span class="read-arrow">↗</span></div>
+      </a>
+
+      <a class="article reveal" target="_blank" rel="noopener" style="--i:1" href="https://medium.com/@dasari2828/from-skill-md-to-studio-a-three-layer-approach-to-scaffolding-databricks-apps-886aa0485f09">
+        <span class="article-src">Medium · @dasari2828</span>
+        <h3>From skill.md to Studio — a three-layer approach to scaffolding Databricks Apps</h3>
+        <div class="article-meta"><span>Databricks Apps</span><span class="read-arrow">↗</span></div>
+      </a>
+
+      <a class="article reveal" target="_blank" rel="noopener" style="--i:2" href="https://medium.com/@dasari2828/building-a-developer-copilot-using-agentic-design-patterns-f3f1ca720662">
+        <span class="article-src">Medium · @dasari2828</span>
+        <h3>Building a developer copilot using agentic design patterns</h3>
+        <div class="article-meta"><span>Agentic AI</span><span class="read-arrow">↗</span></div>
+      </a>
+
+      <a class="article reveal" target="_blank" rel="noopener" style="--i:3" href="https://medium.com/@dasari2828/modular-ingestion-on-databricks-building-a-scalable-config-driven-framework-with-pyhocon-de9d995c69e0">
+        <span class="article-src">Medium · @dasari2828</span>
+        <h3>Modular ingestion on Databricks — a scalable, config-driven framework with PyHocon</h3>
+        <div class="article-meta"><span>Data engineering</span><span class="read-arrow">↗</span></div>
+      </a>
+
+      <a class="article reveal" target="_blank" rel="noopener" style="--i:4" href="https://medium.com/@dasari2828/streamlining-access-control-with-databricks-apps-building-a-steward-grant-manager-without-being-a-0c6a907b6030">
+        <span class="article-src">Medium · @dasari2828</span>
+        <h3>Streamlining access control with Databricks Apps — a Steward Grant Manager without being a DBA</h3>
+        <div class="article-meta"><span>Unity Catalog · Governance</span><span class="read-arrow">↗</span></div>
+      </a>
+
+      <a class="article reveal" target="_blank" rel="noopener" style="--i:5" href="https://medium.com/@dasari2828/how-i-built-an-ai-driven-slack-query-bot-for-patient-data-analytics-and-survived-the-challenges-f3148e8bb6dd">
+        <span class="article-src">Medium · @dasari2828</span>
+        <h3>An AI-driven Slack query bot for patient data analytics — and the challenges we survived</h3>
+        <div class="article-meta"><span>Healthcare · AI</span><span class="read-arrow">↗</span></div>
+      </a>
+
+      <a class="article reveal" target="_blank" rel="noopener" style="--i:6" href="https://medium.com/@mohit.sauhta/automating-medicaids-t-msis-source-to-target-mapping-with-openai-s-response-api-and-file-search-8a3d37d15444">
+        <span class="article-src">Medium · @mohit.sauhta</span>
+        <h3>Automating Medicaid's T-MSIS source-to-target mapping with OpenAI Response API &amp; file search</h3>
+        <div class="article-meta"><span>Healthcare · LLM</span><span class="read-arrow">↗</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT + LOCATIONS -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="mono">— About BeesBridge</span>
+      <h2>We built the consultancy <span class="grad-text">we wished we could hire.</span></h2>
+      <p>BeesBridge is a Databricks delivery partner with 30+ engineers across Charlotte, Bengaluru and Brazil. Every engineer on a Databricks engagement is a <strong style="color:var(--ink);">Resident Solution Architect</strong> — we started the firm because we kept seeing data teams pay top dollar for juniors learning on the job. We don't think that's fair, so we don't do it.</p>
+    </div>
+
+    <!-- AWARD STRIP -->
+    <div class="award reveal">
+      <div class="award-badge" aria-hidden="true">
+        <svg viewBox="0 0 200 200" width="160" height="160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="awardGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#FFD96E"/>
+              <stop offset="50%" stop-color="#F08000"/>
+              <stop offset="100%" stop-color="#B85400"/>
+            </linearGradient>
+            <linearGradient id="awardRim" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FFE6B8"/>
+              <stop offset="100%" stop-color="#B85400"/>
+            </linearGradient>
+            <radialGradient id="awardCore" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0%" stop-color="#FFF3D1"/>
+              <stop offset="60%" stop-color="#FFB347"/>
+              <stop offset="100%" stop-color="#C46A00"/>
+            </radialGradient>
+          </defs>
+          <!-- Ribbons -->
+          <path d="M60 165 L60 195 L80 180 L100 195 L100 165 Z" fill="#8B3A00"/>
+          <path d="M100 165 L100 195 L120 180 L140 195 L140 165 Z" fill="#A04500"/>
+          <!-- Outer star/medallion -->
+          <g transform="translate(100 100)">
+            <!-- 24-point sunburst -->
+            <g fill="url(#awardRim)">
+              <polygon points="0,-92 8,-50 -8,-50"/>
+              <polygon points="0,-92 8,-50 -8,-50" transform="rotate(30)"/>
+              <polygon points="0,-92 8,-50 -8,-50" transform="rotate(60)"/>
+              <polygon points="0,-92 8,-50 -8,-50" transform="rotate(90)"/>
+              <polygon points="0,-92 8,-50 -8,-50" transform="rotate(120)"/>
+              <polygon points="0,-92 8,-50 -8,-50" transform="rotate(150)"/>
+              <polygon points="0,-92 8,-50 -8,-50" transform="rotate(180)"/>
+              <polygon points="0,-92 8,-50 -8,-50" transform="rotate(210)"/>
+              <polygon points="0,-92 8,-50 -8,-50" transform="rotate(240)"/>
+              <polygon points="0,-92 8,-50 -8,-50" transform="rotate(270)"/>
+              <polygon points="0,-92 8,-50 -8,-50" transform="rotate(300)"/>
+              <polygon points="0,-92 8,-50 -8,-50" transform="rotate(330)"/>
+            </g>
+            <!-- Outer circle -->
+            <circle r="60" fill="url(#awardGrad)" stroke="url(#awardRim)" stroke-width="3"/>
+            <!-- Inner medallion -->
+            <circle r="48" fill="url(#awardCore)" stroke="#7A3800" stroke-width="1.5"/>
+            <!-- Text -->
+            <text x="0" y="-22" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#5A2400" letter-spacing="0.5">100 MOST</text>
+            <text x="0" y="-9" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#5A2400" letter-spacing="0.5">PROMISING</text>
+            <text x="0" y="6" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="#5A2400">COMPANIES</text>
+            <line x1="-22" y1="14" x2="22" y2="14" stroke="#7A3800" stroke-width="1"/>
+            <text x="0" y="27" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" font-weight="800" fill="#5A2400">2026</text>
+          </g>
+        </svg>
+      </div>
+      <div class="award-body">
+        <div class="award-eyebrow">
+          <span class="award-pulse"></span>
+          Silicon India · 2026 Award
+        </div>
+        <h3>BeesBridge named among <span class="grad-text">100 Most Promising Companies</span> founded by Indians in the US.</h3>
+        <p>
+          Selected after exhaustive evaluation by an expert panel of C-level executives, industry thought leaders, and the
+          Silicon India editorial board — in recognition of stellar reputation and trust among customers and industry peers,
+          with multiple subscriber nominations.
+        </p>
+        <div class="award-meta">
+          <span><b>2026</b> Award year</span>
+          <span class="sep">·</span>
+          <span><b>ISSN</b> 1091-9503</span>
+          <span class="sep">·</span>
+          <span><b>Silicon India</b> Magazine</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CERTIFICATIONS STRIP -->
+    <div class="cert-strip reveal">
+      <div class="cert-head">
+        <span class="mono">— No junior on your data</span>
+        <h3>31 active certifications across the team.</h3>
+        <p>Every engineer on a Databricks engagement holds a Databricks cert — and the bench is stacked with <strong>Professionals and Experts</strong>, not just Associates. This is what "Resident Solution Architect" looks like on paper.</p>
+      </div>
+      <div class="cert-grid">
+        <div class="cert"><b data-count="15">0</b><span>Databricks</span><i>Data Engineer Associate</i></div>
+        <div class="cert"><b data-count="5">0</b><span>Databricks</span><i>Data Engineer Professional</i></div>
+        <div class="cert"><b data-count="4">0</b><span>Databricks</span><i>Machine Learning Associate</i></div>
+        <div class="cert"><b data-count="3">0</b><span>Databricks</span><i>Machine Learning Professional</i></div>
+        <div class="cert"><b data-count="2">0</b><span>Databricks</span><i>Generative AI Engineer Associate</i></div>
+        <div class="cert"><b data-count="1">0</b><span>AWS</span><i>Solution Architect Professional</i></div>
+        <div class="cert"><b data-count="1">0</b><span>Microsoft Azure</span><i>Solution Architect Expert</i></div>
+        <div class="cert cert-total"><b data-count="31">0</b><span>Total</span><i>Active certifications</i></div>
+      </div>
+    </div>
+
+    <!-- CO-FOUNDERS -->
+    <div class="section-head reveal" style="margin-top: 80px; margin-bottom: 32px;">
+      <span class="mono">— Leadership</span>
+      <h2>The partners in the room.</h2>
+      <p>Every BeesBridge engagement has a founding partner involved from kickoff — not a sales handoff to a delivery team you've never met.</p>
+    </div>
+    <div class="founders">
+      <article class="founder reveal" style="--i:0">
+        <div class="founder-portrait founder-portrait-photo">
+          <img src="assets/venkat-dasari.png" alt="Venkat Dasari" class="founder-photo" />
+          <span class="founder-glow"></span>
+        </div>
+        <div class="founder-name">Venkat Dasari</div>
+        <div class="founder-role">Co-founder · Consulting Partner</div>
+        <p class="founder-bio">
+          Leads engineering, AI/ML and Generative AI, and the product side of the firm — including HelixCore Studio.
+          Publishes regularly on Databricks Apps, agentic design patterns, modular ingestion, and lakehouse governance.
+        </p>
+        <div class="founder-links">
+          <a href="mailto:vdasari@beesbridge.us" class="founder-link">vdasari@beesbridge.us</a>
+          <a href="https://medium.com/@dasari2828" target="_blank" rel="noopener" class="founder-link">@dasari2828 on Medium ↗</a>
+        </div>
+      </article>
+
+      <article class="founder reveal" style="--i:1">
+        <div class="founder-portrait founder-portrait-photo">
+          <img src="assets/mohit-sauhta.png" alt="Mohit Sauhta" class="founder-photo" />
+          <span class="founder-glow"></span>
+        </div>
+        <div class="founder-name">Mohit Sauhta</div>
+        <div class="founder-role">Co-founder · Consulting Partner</div>
+        <p class="founder-bio">
+          Leads delivery, architecture and partner relationships across the Databricks, AWS and Azure ecosystems.
+          Published work on automating Medicaid T-MSIS source-to-target mapping with OpenAI's Response API and file search.
+        </p>
+        <div class="founder-links">
+          <a href="mailto:msauhta@beesbridge.us" class="founder-link">msauhta@beesbridge.us</a>
+          <a href="https://medium.com/@mohit.sauhta" target="_blank" rel="noopener" class="founder-link">@mohit.sauhta on Medium ↗</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- WHY / WHAT WE BELIEVE -->
+    <div class="why-grid">
+      <div class="why-card reveal" style="--i:0">
+        <span class="why-num">01</span>
+        <h4>Why "BeesBridge"?</h4>
+        <p>Bees are precise, coordinated, and move in colonies — exactly how we run delivery across three time zones. A bridge connects two sides without anyone having to swim. Put them together and you get what we do every day: bridge business goals and data infrastructure with a team that actually hands things off cleanly.</p>
+      </div>
+      <div class="why-card reveal" style="--i:1">
+        <span class="why-num">02</span>
+        <h4>What we believe</h4>
+        <p>Good data work is boring in the best way. It ships, it monitors itself, it doesn't wake anyone up, and the cost line on the cloud bill goes down instead of up. The part where everyone argues about which tool is best is usually a symptom that nobody wrote down the outcome.</p>
+      </div>
+    </div>
+
+    <!-- LOCATIONS -->
+    <div class="section-head reveal" style="margin-top: 80px; margin-bottom: 32px;">
+      <span class="mono">— Where we are</span>
+      <h2>Three continents. <span class="grad-text">One lakehouse philosophy.</span></h2>
+      <p>Engineering hubs in the US, India and Brazil for true follow-the-sun delivery.</p>
+    </div>
+
+    <div class="locations">
+      <div class="loc reveal" style="--i:0">
+        <div class="loc-flag" aria-hidden="true">🇺🇸</div>
+        <div class="loc-name">Charlotte, NC</div>
+        <div class="loc-role">Headquarters</div>
+        <div class="loc-co">UNITED STATES</div>
+      </div>
+      <div class="loc reveal" style="--i:1">
+        <div class="loc-flag" aria-hidden="true">🇮🇳</div>
+        <div class="loc-name">Bengaluru</div>
+        <div class="loc-role">Engineering Hub</div>
+        <div class="loc-co">INDIA</div>
+      </div>
+      <div class="loc reveal" style="--i:2">
+        <div class="loc-flag" aria-hidden="true">🇧🇷</div>
+        <div class="loc-name">Brazil</div>
+        <div class="loc-role">Product UI Team</div>
+        <div class="loc-co">SOUTH AMERICA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="mono">— Ready when you are</span>
+      <h2>Let's put a number on the plan.</h2>
+      <p>Send us what you're working on. We'll come back inside 48 hours with three things you could do next week — and whether we're the right team to help.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-copy reveal">
+        <!-- LIVE BOOKING -->
+        <div class="book-card">
+          <div class="book-head">
+            <span class="book-dot"></span>
+            BOOK A 30-MIN SCOPING CALL
+          </div>
+          <p>Pick a slot on your calendar — we'll be there. The "Add to calendar" link below opens Google Calendar with the event pre-filled and Venkat as the attendee. Or, if you'd rather, just email.</p>
+          <div class="book-cta">
+            <a class="btn btn-primary shine" target="_blank" rel="noopener"
+               href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=BeesBridge%20%C2%B7%20Scoping%20Call&details=30-minute%20introduction%20to%20discuss%20a%20possible%20Databricks%20engagement.%20Reply%20with%20a%20Zoom%2FMeet%20link%20and%20we%27ll%20be%20there.%0A%0A%E2%80%93%20BeesBridge&add=vdasari@beesbridge.us&dates=20260601T140000Z/20260601T143000Z">
+              Open Google Calendar →
+            </a>
+            <a class="btn btn-ghost" href="mailto:vdasari@beesbridge.us?subject=Scoping%20call%20request&body=Hi%20Venkat%20%E2%80%94%20I%27d%20like%20to%20book%20a%2030-min%20scoping%20call.%20Here%20are%20a%20few%20times%20that%20work%20on%20my%20end%3A%0A%0A1.%0A2.%0A3.%0A%0AHere%27s%20a%20bit%20about%20what%20we%27re%20working%20on%3A%0A">
+              Suggest times via email
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-emails">
+          <a href="mailto:admin@beesbridge.us" class="email-row">
+            <span class="email-av">BB</span>
+            <span>
+              <b>admin@beesbridge.us</b>
+              <i>General inquiries · Routes to the right person</i>
+            </span>
+            <span class="arrow">→</span>
+          </a>
+          <a href="mailto:vdasari@beesbridge.us" class="email-row">
+            <span class="email-av">VD</span>
+            <span>
+              <b>vdasari@beesbridge.us</b>
+              <i>Consulting · Delivery · HelixCore</i>
+            </span>
+            <span class="arrow">→</span>
+          </a>
+          <a href="mailto:msauhta@beesbridge.us" class="email-row">
+            <span class="email-av">MS</span>
+            <span>
+              <b>msauhta@beesbridge.us</b>
+              <i>Partnerships · PSA Platform</i>
+            </span>
+            <span class="arrow">→</span>
+          </a>
+        </div>
+
+        <div class="contact-meta">
+          <span>📞 <a href="tel:+17192712850">+1 (719) 271-2850</a></span>
+          <span>📍 Charlotte, NC · Bengaluru · Brazil</span>
+        </div>
+
+        <!-- NEWSLETTER -->
+        <form class="newsletter" onsubmit="event.preventDefault(); const e=this.querySelector('input').value; window.location.href='mailto:admin@beesbridge.us?subject=Subscribe%20to%20BeesBridge%20writing&body=Please%20add%20'+encodeURIComponent(e)+'%20to%20the%20BeesBridge%20engineering%20newsletter.';">
+          <div class="newsletter-head">
+            <b>Get our engineering writing in your inbox.</b>
+            <span>Field notes from the work. One email, monthly-ish. No spam, no events, no "you might also like…"</span>
+          </div>
+          <div class="newsletter-row">
+            <input type="email" required placeholder="you@company.com" aria-label="Your email" />
+            <button class="btn btn-primary" type="submit">Subscribe →</button>
+          </div>
+        </form>
+      </div>
+
+      <form class="contact-form reveal" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Thanks — we will be in touch.';">
+        <label>
+          <span>Name</span>
+          <input type="text" required placeholder="Jane Doe" />
+        </label>
+        <label>
+          <span>Work email</span>
+          <input type="email" required placeholder="jane@company.com" />
+        </label>
+        <label>
+          <span>Company</span>
+          <input type="text" placeholder="Acme Inc." />
+        </label>
+        <label>
+          <span>How can we help?</span>
+          <select required>
+            <option value="">Select a topic…</option>
+            <option>Databricks delivery / lakehouse build</option>
+            <option>Platform migration</option>
+            <option>Data engineering pipelines</option>
+            <option>AI / ML &amp; Generative AI</option>
+            <option>Data quality &amp; governance</option>
+            <option>HelixCore demo</option>
+            <option>PSA platform demo</option>
+            <option>Staff augmentation</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label class="full">
+          <span>Message</span>
+          <textarea rows="4" placeholder="Tell us a bit about your project…"></textarea>
+        </label>
+        <button class="btn btn-primary shine" type="submit">
+          Send message
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="foot-brand">
+        <a href="#home" class="brand"><img src="assets/beesbridge-logo.png" alt="BeesBridge" class="brand-logo" /></a>
+        <p>A Databricks delivery partner with 150+ production engagements and 30+ engineers across Charlotte, NC · Bengaluru, India · Brazil.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="#helixcore">HelixCore Studio</a></li>
+          <li><a href="#psa">BeesBridge PSA</a></li>
+          <li><a href="#contact">Request a demo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#insights">Writing</a></li>
+          <li><a href="https://beesbridge.us/certifications" target="_blank" rel="noopener">Certifications ↗</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:admin@beesbridge.us">admin@beesbridge.us</a></li>
+          <li><a href="mailto:vdasari@beesbridge.us">vdasari@beesbridge.us</a></li>
+          <li><a href="mailto:msauhta@beesbridge.us">msauhta@beesbridge.us</a></li>
+          <li><a href="tel:+17192712850">+1 (719) 271-2850</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container foot-bar">
+      <span>© 2026 BeesBridge LLC. All rights reserved.</span>
+      <span>Accredited Databricks delivery partner · www.beesbridge.us</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
 </html>
