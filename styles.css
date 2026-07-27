@@ -480,10 +480,12 @@ button { font-family: inherit; cursor: pointer; }
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 .logo-tile img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
+  /* .logo-tile is 168x64 with 10px/18px padding -> 132x44 content box.
+     Hardcoded because percentage height doesn't resolve reliably against
+     an implicit (auto) grid row track, even when the grid container itself
+     has a definite height. */
+  width: 132px;
+  height: 44px;
   object-fit: contain;
   display: block;
 }
