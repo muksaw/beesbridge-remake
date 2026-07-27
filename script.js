@@ -184,3 +184,44 @@ document.querySelectorAll('[data-count]').forEach(el => countIO.observe(el));
   }
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) frame();
 })();
+
+/* ============================================
+   Temporary announcement banner
+   ============================================ */
+(function announcementBanner() {
+  const banner = document.getElementById('promoBanner');
+  if (!banner) return;
+
+  // Edit these two dates to change how long the banner shows.
+  // To end it early, just delete the .promo-banner block from index.html.
+  const startDate = new Date('2026-07-27');
+  const endDate = new Date('2026-08-10');
+
+  const now = new Date();
+  const dismissed = localStorage.getItem('promoBannerDismissed') === 'true';
+
+  function removeBanner() {
+    banner.remove();
+    document.body.classList.remove('has-banner');
+  }
+
+  if (now < startDate || now > endDate || dismissed) {
+    removeBanner();
+    return;
+  }
+
+  document.body.classList.add('has-banner');
+
+  function syncHeight() {
+    document.documentElement.style.setProperty('--banner-h', banner.offsetHeight + 'px');
+  }
+  syncHeight();
+  new ResizeObserver(syncHeight).observe(banner);
+  window.addEventListener('resize', syncHeight);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncHeight);
+
+  document.getElementById('promoBannerClose').addEventListener('click', () => {
+    localStorage.setItem('promoBannerDismissed', 'true');
+    removeBanner();
+  });
+})();
