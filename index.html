@@ -26,11 +26,34 @@
   <canvas id="particles"></canvas>
 </div>
 
-<!-- ANNOUNCEMENT BANNER (temporary — delete this block once the promo period ends) -->
+<!-- ANNOUNCEMENT BAR (temporary — delete this block once the promo period ends) -->
 <div class="promo-banner" id="promoBanner">
-  <div class="container promo-banner-inner">
-    <span class="promo-banner-text">🎉 We're excited to welcome <strong>Navispend</strong> and <strong>PatientIQ</strong> as our newest customers!</span>
-    <button class="promo-banner-close" id="promoBannerClose" aria-label="Dismiss announcement">&times;</button>
+  <div class="container promo-banner-bar">
+    <div class="promo-banner-text">
+      <span class="promo-banner-eyebrow">New partners</span>
+      Navispend and PatientIQ have joined the BeesBridge network.
+    </div>
+    <div class="promo-banner-actions">
+      <button class="promo-banner-toggle" id="promoBannerToggle" aria-expanded="false" aria-controls="promoBannerModal">View announcement</button>
+      <button class="promo-banner-close" id="promoBannerClose" aria-label="Dismiss announcement">&times;</button>
+    </div>
+  </div>
+</div>
+
+<!-- ANNOUNCEMENT MODAL — LinkedIn post embeds, opened from the bar above -->
+<div class="promo-modal-backdrop" id="promoModalBackdrop" hidden></div>
+<div class="promo-modal" id="promoBannerModal" role="dialog" aria-modal="true" aria-labelledby="promoModalTitle" hidden>
+  <div class="promo-modal-head">
+    <span class="promo-modal-title" id="promoModalTitle">New partners</span>
+    <button class="promo-modal-close" id="promoModalClose" aria-label="Close">&times;</button>
+  </div>
+  <div class="promo-modal-embeds">
+    <div class="promo-embed-card">
+      <iframe class="promo-embed" data-src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7487659683323871232" title="BeesBridge LinkedIn announcement — Navispend" loading="lazy"></iframe>
+    </div>
+    <div class="promo-embed-card">
+      <iframe class="promo-embed" data-src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7487659814119010306" title="BeesBridge LinkedIn announcement — PatientIQ" loading="lazy"></iframe>
+    </div>
   </div>
 </div>
 

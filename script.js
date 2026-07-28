@@ -186,26 +186,29 @@ document.querySelectorAll('[data-count]').forEach(el => countIO.observe(el));
 })();
 
 /* ============================================
-   Temporary announcement banner
+   Temporary announcement bar + LinkedIn embed modal
    ============================================ */
 (function announcementBanner() {
   const banner = document.getElementById('promoBanner');
+  const modal = document.getElementById('promoBannerModal');
+  const backdrop = document.getElementById('promoModalBackdrop');
   if (!banner) return;
 
-  // Edit these two dates to change how long the banner shows.
-  // To end it early, just delete the .promo-banner block from index.html.
+  // Edit these two dates to change how long the bar shows.
+  // To end it early, just delete the .promo-banner / .promo-modal blocks from index.html.
   const startDate = new Date('2026-07-27');
   const endDate = new Date('2026-08-10');
 
   const now = new Date();
-  const dismissed = localStorage.getItem('promoBannerDismissed') === 'true';
 
   function removeBanner() {
     banner.remove();
     document.body.classList.remove('has-banner');
+    if (modal) modal.remove();
+    if (backdrop) backdrop.remove();
   }
 
-  if (now < startDate || now > endDate || dismissed) {
+  if (now < startDate || now > endDate) {
     removeBanner();
     return;
   }
@@ -220,8 +223,51 @@ document.querySelectorAll('[data-count]').forEach(el => countIO.observe(el));
   window.addEventListener('resize', syncHeight);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncHeight);
 
-  document.getElementById('promoBannerClose').addEventListener('click', () => {
-    localStorage.setItem('promoBannerDismissed', 'true');
-    removeBanner();
+  document.getElementById('promoBannerClose').addEventListener('click', removeBanner);
+
+  /* Modal: opened on demand, LinkedIn iframes only load once actually requested */
+  const toggle = document.getElementById('promoBannerToggle');
+  const modalClose = document.getElementById('promoModalClose');
+  if (!toggle || !modal || !backdrop) return;
+
+  let embedsLoaded = false;
+  function loadEmbeds() {
+    if (embedsLoaded) return;
+    embedsLoaded = true;
+    modal.querySelectorAll('iframe.promo-embed[data-src]').forEach((frame) => {
+      frame.src = frame.dataset.src;
+    });
+  }
+
+  function openModal() {
+    loadEmbeds();
+    modal.hidden = false;
+    backdrop.hidden = false;
+    requestAnimationFrame(() => {
+      modal.classList.add('open');
+      backdrop.classList.add('open');
+    });
+    toggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    backdrop.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      if (!modal.classList.contains('open')) {
+        modal.hidden = true;
+        backdrop.hidden = true;
+      }
+    }, 260);
+  }
+
+  toggle.addEventListener('click', openModal);
+  modalClose.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
   });
 })();
